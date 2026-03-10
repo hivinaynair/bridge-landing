@@ -1,5 +1,5 @@
-import { MockupCard } from "@/components/ui/MockupCard";
-import { WaBubble } from "@/components/ui/WaBubble";
+import { MockupCard } from "@/components/ui/mockup-card";
+import { WaBubble } from "@/components/ui/wa-bubble";
 
 export function AdmissionsVisual() {
   return (
@@ -151,7 +151,7 @@ export function UpsellsVisual() {
             </div>
           ))}
         </div>
-        <div className="mt-4 border-t border-border pt-3 flex justify-between text-xs">
+        <div className="mt-4 pt-3 flex justify-between text-xs">
           <div>
             <div className="text-2xs text-muted-foreground">DL conversion</div>
             <div className="text-xl font-bold text-primary">68%</div>
@@ -175,7 +175,7 @@ export function UpsellsVisual() {
 export function SarathiVisual() {
   return (
     <div className="w-full max-w-md">
-      <div className="border border-border rounded py-3 overflow-hidden bg-white shadow-md">
+      <MockupCard className="rounded overflow-hidden py-3">
         <div className="bg-gray-100 px-3 py-2 flex items-center gap-2 border-b border-border">
           <div className="flex gap-1">
             {["#EF4444", "#F59E0B", "#10B981"].map((c) => (
@@ -214,7 +214,7 @@ export function SarathiVisual() {
             ⚡ Bridge: 4 fields injected
           </div>
         </div>
-      </div>
+      </MockupCard>
     </div>
   );
 }

@@ -9,17 +9,19 @@ import {
   Navbar,
   ProductSection,
 } from "@/components";
-
-// ─── Page ─────────────────────────────────────────────────────────────────────
+import { HeroVideo } from "@/components/hero-video";
+import { SecuritySection } from "@/components/security-section";
 
 export default function Page() {
   return (
-    <main>
+    <main className="pt-[72px]">
       <Navbar />
       <Hero />
+      <HeroVideo />
       <ProductSection />
       <FeaturesSection />
       <CapabilitiesSection />
+      <SecuritySection />
       <CtaSection />
       <Footer />
     </main>

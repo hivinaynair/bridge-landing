@@ -1,7 +1,7 @@
-export { CapabilitiesSection } from "./CapabilitiesSection";
-export { CtaSection } from "./CtaSection";
-export { FeaturesSection } from "./FeaturesSection";
-export { Footer } from "./Footer";
-export { Hero } from "./Hero";
-export { Navbar } from "./Navbar";
-export { ProductSection } from "./ProductSection";
+export { CapabilitiesSection } from "./capabilities-section";
+export { CtaSection } from "./cta-section";
+export { FeaturesSection } from "./features-section";
+export { Footer } from "./footer";
+export { Hero } from "./hero";
+export { Navbar } from "./navbar";
+export { ProductSection } from "./product-section";
