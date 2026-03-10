@@ -1,3 +1,5 @@
+export { CrossMark } from "./BorderCross";
+export { BorderX } from "./BorderX";
 export { Button } from "./Button";
 export { DisplayHeadline } from "./DisplayHeadline";
 export { DotPattern } from "./DotPattern";
