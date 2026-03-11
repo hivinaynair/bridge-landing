@@ -112,7 +112,8 @@ export function GridPanel({
         const off = document.createElement("canvas");
         off.width = bw;
         off.height = bh;
-        const offCtx = off.getContext("2d")!;
+        const offCtx = off.getContext("2d");
+        if (!offCtx) return;
         offCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
         offCtx.fillStyle = gridColor;
         for (let r = 0; r < rows; r++) {
@@ -126,7 +127,7 @@ export function GridPanel({
 
       // Stamp base grid (already at full DPR resolution, so reset transform)
       ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.drawImage(offscreenRef.current!, 0, 0);
+      if (offscreenRef.current) ctx.drawImage(offscreenRef.current, 0, 0);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       // Spawn new illuminated dots
@@ -180,7 +181,7 @@ export function GridPanel({
   return (
     <div
       className="absolute top-0 h-full pointer-events-none"
-      style={{ [side]: 0, width: "40%" }}
+      style={{ [side]: 0, width: "50%" }}
     >
       <canvas
         ref={canvasRef}

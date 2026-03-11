@@ -1,4 +1,4 @@
-export { CapabilitiesSection } from "./capabilities-section";
+export { CapabilitiesCards, CapabilitiesHeading } from "./capabilities-section";
 export { CtaSection } from "./cta-section";
 export { FeaturesSection } from "./features-section";
 export { Footer } from "./footer";

@@ -1,7 +1,8 @@
 "use client";
 
 import {
-  CapabilitiesSection,
+  CapabilitiesCards,
+  CapabilitiesHeading,
   CtaSection,
   FeaturesSection,
   Footer,
@@ -20,9 +21,12 @@ export default function Page() {
       <HeroVideo />
       <ProductSection />
       <FeaturesSection />
-      <CapabilitiesSection />
       <SecuritySection />
+
+      <CapabilitiesHeading />
+      <CapabilitiesCards />
       <CtaSection />
+
       <Footer />
     </main>
   );

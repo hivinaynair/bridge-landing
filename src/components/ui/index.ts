@@ -1,5 +1,4 @@
-export { BorderY } from "./border/border-y";
-export { BorderCross } from "./border-cross";
+export { BorderEdges } from "./border-edges";
 export { Button } from "./button";
 export { DisplayHeadline } from "./display-headline";
 export { GridBg } from "./grid-bg";

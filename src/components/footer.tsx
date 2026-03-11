@@ -11,8 +11,8 @@ const RIGHT_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="bg-background">
-      <div className="flex justify-between gap-12 mx-auto max-w-8xl py-12 lg:py-16">
+    <footer className="pt-28">
+      <div className="flex justify-between gap-12 mx-auto max-w-8xl px-20">
         {/* Left — brand */}
         <div className="max-w-md flex flex-col gap-6">
           <Image src="/arch.svg" alt="Bridge" width={50} height={50} />
@@ -57,7 +57,7 @@ export function Footer() {
       </div>
 
       {/* Mosaic grid text */}
-      <div className="w-full h-[30rem] overflow-hidden">
+      <div className="w-full h-[30rem] overflow-hidden pt-28">
         <GridText
           text="Bridge"
           cellSize={8}

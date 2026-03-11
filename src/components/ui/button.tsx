@@ -7,8 +7,7 @@ const BASE =
 
 const VARIANTS: Record<Variant, string> = {
   primary: "bg-card-foreground text-white hover:opacity-90",
-  outline:
-    "bg-transparent text-foreground border border-border hover:bg-secondary",
+  outline: "bg-transparent text-foreground border  hover:bg-secondary",
   muted: "bg-muted text-foreground hover:opacity-90",
   "outline-white":
     "bg-transparent text-white border border-white/35 hover:bg-white/10",

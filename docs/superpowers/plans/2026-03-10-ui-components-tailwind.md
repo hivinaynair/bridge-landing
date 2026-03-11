@@ -60,7 +60,7 @@ const VARIANTS: Record<Variant, string> = {
   primary:
     "bg-card-foreground text-white hover:opacity-90",
   outline:
-    "bg-transparent text-foreground border border-border hover:bg-secondary",
+    "bg-transparent text-foreground border  hover:bg-secondary",
   lavender:
     "bg-[oklch(0.91_0.055_95)] text-[oklch(0.28_0.045_39)] hover:opacity-90",
   "outline-white":
@@ -168,7 +168,7 @@ type Props = { className?: string } & HTMLAttributes<HTMLSpanElement>;
 export function TrustBadge({ children, className = "", ...rest }: Props) {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground border border-border py-1 px-3 bg-background${className ? ` ${className}` : ""}`}
+      className={`inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground border  py-1 px-3 bg-background${className ? ` ${className}` : ""}`}
       {...rest}
     >
       {children}
@@ -225,7 +225,7 @@ type Props = { className?: string } & HTMLAttributes<HTMLDivElement>;
 export function MockupCard({ children, className = "", ...rest }: Props) {
   return (
     <div
-      className={`bg-white border border-border shadow-[0_2px_12px_0_oklch(0_0_0/0.06)]${className ? ` ${className}` : ""}`}
+      className={`bg-white border  shadow-[0_2px_12px_0_oklch(0_0_0/0.06)]${className ? ` ${className}` : ""}`}
       {...rest}
     >
       {children}
@@ -562,7 +562,7 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 
 export function ProductSection() {
   return (
-    <section className="border-b border-t border-border bg-background">
+    <section className="border-b border-t  bg-background">
       <div className="mx-auto max-w-[1440px] px-6 py-20 text-center">
         <SectionLabel className="justify-center mb-6">PRODUCT</SectionLabel>
         <DisplayHeadline className="m-0 mb-5 text-[clamp(32px,4vw,52px)] max-w-lg mx-auto">
@@ -683,7 +683,7 @@ const capabilities: Capability[] = [
 
 export function CapabilitiesSection() {
   return (
-    <section className="border-t border-border bg-background">
+    <section className="border-t  bg-background">
       <div className="mx-auto max-w-[1440px] px-6 py-20">
         <div className="grid grid-cols-2 gap-12 mb-14 items-start">
           <div>
@@ -698,11 +698,11 @@ export function CapabilitiesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 border border-border">
+        <div className="grid grid-cols-3 border ">
           {capabilities.map((cap, i) => (
             <div
               key={cap.title}
-              className="p-7 border-border"
+              className="p-7 "
               style={{
                 borderRight: i % 3 !== 2 ? "1px solid var(--border)" : undefined,
                 borderBottom: i < 3 ? "1px solid var(--border)" : undefined,
@@ -937,7 +937,7 @@ The resulting file ends at:
 ```css
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply  outline-ring/50;
   }
 
   body {

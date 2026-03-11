@@ -7,7 +7,12 @@ type Props = {
   className?: string;
 } & HTMLAttributes<HTMLHeadingElement>;
 
-export function DisplayHeadline({ as: Tag = "h2", className = "", children, ...rest }: Props) {
+export function DisplayHeadline({
+  as: Tag = "h2",
+  className = "",
+  children,
+  ...rest
+}: Props) {
   return (
     <Tag
       className={`font-serif font-normal leading-[1.05] tracking-[-0.025em] text-card-foreground${className ? ` ${className}` : ""}`}

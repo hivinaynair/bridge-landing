@@ -36,7 +36,7 @@ export function AdmissionsVisual() {
         ].map((f) => (
           <div
             key={f.label}
-            className="flex justify-between py-1.5 border-b border-border text-2xs"
+            className="flex justify-between py-1.5 border-b text-2xs"
           >
             <span className="text-muted-foreground">{f.label}</span>
             <span className="text-primary font-medium">{f.value}</span>
@@ -92,126 +92,69 @@ export function LeadsVisual() {
   );
 }
 
-export function UpsellsVisual() {
-  const steps = [
-    {
-      month: "Month 1",
-      label: "Enrolled",
-      color: "var(--primary)",
-      note: null,
-    },
-    {
-      month: "Month 5",
-      label: "LL Expiry Alert",
-      color: "#F59E0B",
-      note: '"Ravi, your Learner\'s License expires in 30 days. Upgrade to DL now!"',
-    },
-    {
-      month: "Month 6",
-      label: "DL Converted ✓",
-      color: "var(--primary)",
-      note: null,
-    },
-  ];
+export function PaymentsVisual() {
+  const collected = 5000;
+  const total = 10000;
+  const percent = Math.round((collected / total) * 100);
 
   return (
-    <div className="w-full max-w-sm">
-      <MockupCard className="p-6">
-        <div className="text-2xs font-semibold uppercase tracking-widest text-muted-foreground mb-5">
-          AUTOMATED STUDENT JOURNEY
+    <div className="w-full max-w-lg">
+      <MockupCard className="p-5">
+        <div className="text-2xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+          STUDENT PAYMENT SUMMARY
         </div>
-        <div className="flex flex-col">
-          {steps.map((step, i) => (
-            <div key={step.month} className="flex gap-4 items-start">
-              <div className="flex flex-col items-center shrink-0">
-                <div
-                  className="w-3 h-3 rounded-full mt-1"
-                  style={{ background: step.color }}
-                />
-                {i < steps.length - 1 && (
-                  <div
-                    className="w-0.5 bg-border my-1"
-                    style={{ height: step.note ? "80px" : "40px" }}
-                  />
-                )}
-              </div>
-              <div className="pb-1">
-                <div className="text-2xs text-muted-foreground uppercase tracking-widest">
-                  {step.month}
-                </div>
-                <div className="text-base font-medium text-card-foreground">
-                  {step.label}
-                </div>
-                {step.note && (
-                  <div className="bg-yellow-100 border border-yellow-300 rounded py-1.5 px-2.5 text-2xs text-yellow-900 mt-1.5 mb-1 leading-relaxed">
-                    {step.note}
-                  </div>
-                )}
-              </div>
+        <div className="flex justify-between items-center mb-2 gap-10">
+          <div>
+            <div className="text-base font-semibold text-card-foreground">
+              Ravi Kumar
             </div>
-          ))}
-        </div>
-        <div className="mt-4 pt-3 flex justify-between text-xs">
-          <div>
-            <div className="text-2xs text-muted-foreground">DL conversion</div>
-            <div className="text-xl font-bold text-primary">68%</div>
+            <div className="text-2xs text-muted-foreground">
+              4-Wheeler · 21 sessions
+            </div>
           </div>
-          <div>
-            <div className="text-2xs text-muted-foreground">Upsell revenue</div>
-            <div className="text-xl font-bold text-card-foreground">₹1,800</div>
-          </div>
-          <div>
-            <div className="text-2xs text-muted-foreground">Auto-campaigns</div>
+          <div className="text-right">
             <div className="text-xl font-bold text-card-foreground">
-              3 active
-            </div>
-          </div>
-        </div>
-      </MockupCard>
-    </div>
-  );
-}
-
-export function SarathiVisual() {
-  return (
-    <div className="w-full max-w-md">
-      <MockupCard className="rounded overflow-hidden py-3">
-        <div className="bg-gray-100 px-3 py-2 flex items-center gap-2 border-b border-border">
-          <div className="flex gap-1">
-            {["#EF4444", "#F59E0B", "#10B981"].map((c) => (
-              <div
-                key={c}
-                className="w-2 h-2 rounded-full"
-                style={{ background: c }}
-              />
-            ))}
-          </div>
-          <div className="flex-1 bg-white rounded py-0.5 px-2 text-2xs text-muted-foreground border border-border">
-            sarathi.parivahan.gov.in/sarathiservice
-          </div>
-        </div>
-        <div className="p-4">
-          <div className="text-xs font-bold text-blue-700 mb-3">
-            SARATHI — Learner's Licence Application
-          </div>
-          {[
-            { label: "Applicant Name", value: "RAVI KUMAR" },
-            { label: "Father's Name", value: "SURESH KUMAR" },
-            { label: "Date of Birth", value: "14-03-1998" },
-            { label: "Address", value: "Koramangala, Bengaluru" },
-          ].map((field) => (
-            <div key={field.label} className="flex gap-3 items-center mb-2">
-              <span className="text-2xs text-gray-600 w-28 shrink-0">
-                {field.label}:
+              ₹{collected.toLocaleString("en-IN")}
+              <span className="text-sm font-normal text-muted-foreground">
+                {" "}
+                / ₹{total.toLocaleString("en-IN")}
               </span>
-              <div className="flex-1 border border-primary py-0.5 px-1.5 text-2xs bg-primary/5 text-primary font-semibold">
-                {field.value}
-              </div>
-              <span className="text-base text-primary">✓</span>
             </div>
-          ))}
-          <div className="mt-2 bg-primary text-primary-foreground py-2 px-3 text-2xs font-semibold rounded flex items-center gap-1.5 w-fit">
-            ⚡ Bridge: 4 fields injected
+          </div>
+        </div>
+        <div className="mb-4">
+          <div className="w-full h-2 bg-border rounded-full overflow-hidden">
+            <div
+              className="h-full bg-primary rounded-full"
+              style={{ width: `${percent}%` }}
+            />
+          </div>
+          <div className="flex justify-end mt-1">
+            <span className="text-2xs text-amber-600 font-semibold">
+              ₹{(total - collected).toLocaleString("en-IN")} due
+            </span>
+          </div>
+        </div>
+        {[
+          { date: "15 Feb", amount: "₹5,000", method: "UPI", status: "Paid" },
+        ].map((p) => (
+          <div
+            key={p.date}
+            className="flex justify-between items-center py-2 border-b text-2xs"
+          >
+            <span className="text-muted-foreground w-14">{p.date}</span>
+            <span className="font-medium text-card-foreground">{p.amount}</span>
+            <span className="text-muted-foreground">{p.method}</span>
+            <span
+              className={`font-semibold ${p.status === "Due" ? "text-amber-600" : "text-primary"}`}
+            >
+              {p.status}
+            </span>
+          </div>
+        ))}
+        <div className="mt-4 flex items-center gap-2">
+          <div className="flex-1 bg-primary text-primary-foreground py-2 px-3 text-2xs font-semibold rounded text-center">
+            Send Payment Link · ₹5,000
           </div>
         </div>
       </MockupCard>
@@ -272,7 +215,7 @@ export function SchedulingVisual() {
                   return (
                     <td
                       key={key}
-                      className="py-0.5 px-0.5 border border-border text-2xs font-medium text-center min-w-11"
+                      className="py-0.5 px-0.5 border text-2xs font-medium text-center min-w-11"
                       style={{
                         background: booking ? "var(--primary)" : "transparent",
                         color: booking

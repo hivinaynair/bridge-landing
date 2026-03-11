@@ -2,10 +2,9 @@
 
 import {
   Calendar,
+  CreditCard,
   type LucideIcon,
   MessageCircle,
-  Monitor,
-  TrendingUp,
   Zap,
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
@@ -13,11 +12,10 @@ import { useState } from "react";
 import {
   AdmissionsVisual,
   LeadsVisual,
-  SarathiVisual,
+  PaymentsVisual,
   SchedulingVisual,
-  UpsellsVisual,
 } from "./feature-visuals";
-import { BorderY, DisplayHeadline, SectionLabel } from "./ui";
+import { BorderEdges } from "./ui";
 
 interface Feature {
   id: string;
@@ -30,121 +28,103 @@ interface Feature {
 const features: Feature[] = [
   {
     id: "admissions",
-    title: "3-Minute Admissions",
+    title: "Quick Admissions",
     icon: Zap,
     description:
-      "Aadhaar-based KYC auto-fills student name, DOB, photo, and address in seconds. Cut paperwork from 15 minutes to 3. No re-entry errors.",
+      "Enter a student's Aadhaar number — Bridge fills in their name, photo, date of birth, and address automatically. What used to take 15 minutes now takes 3.",
     visual: <AdmissionsVisual />,
   },
   {
-    id: "leads",
-    title: "WhatsApp Lead Recovery",
-    icon: MessageCircle,
+    id: "payments",
+    title: "Payments & Payment Links",
+    icon: CreditCard,
     description:
-      "When a prospect calls for pricing, Bridge fires an instant WhatsApp pitch. If they don't enroll in 48 hours, an automated follow-up with a discount goes out. Hot leads flagged for manual follow-up.",
-    visual: <LeadsVisual />,
-  },
-  {
-    id: "upsells",
-    title: "Automated Revenue Upsells",
-    icon: TrendingUp,
-    description:
-      "Bridge messages students when their Learner's License is expiring (Month 5), driving DL conversions. Referral and family discount campaigns run automatically.",
-    visual: <UpsellsVisual />,
-  },
-  {
-    id: "sarathi",
-    title: "Sarathi Auto-Fill",
-    icon: Monitor,
-    description:
-      "Chrome extension that injects student data into India's Sarathi RTO portal with one click. No manual re-entry. No typos.",
-    visual: <SarathiVisual />,
+      "Track fees, partial payments, and dues in one place. Send a payment link directly to the student's phone — no cash counting, no manual entries.",
+    visual: <PaymentsVisual />,
   },
   {
     id: "scheduling",
-    title: "Smart Scheduling",
+    title: "Easy Scheduling",
     icon: Calendar,
     description:
-      "Vehicle-first calendar. Book all sessions upfront, auto-assign instructor, prevent double-booking. Students get their full schedule on day one.",
+      "Pick a vehicle, see open slots, assign a student. Bridge prevents double-bookings and gives each student their full schedule on day one.",
     visual: <SchedulingVisual />,
   },
+  {
+    id: "leads",
+    title: "WhatsApp Follow-Ups",
+    icon: MessageCircle,
+    description:
+      "When someone calls asking about prices, Bridge sends them a WhatsApp message automatically. If they don't enroll in 48 hours, a follow-up goes out — so you never lose an enquiry.",
+    visual: <LeadsVisual />,
+  },
 ];
-
-function BorderJunction() {
-  return (
-    <svg
-      className="absolute left-0 z-10 pointer-events-none hidden lg:block"
-      style={{ bottom: -12, marginLeft: -12 }}
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path d="M12 0V24M12 12H24" stroke="var(--border)" strokeWidth="1" />
-    </svg>
-  );
-}
 
 function FeatureAccordionItem({
   feature,
   isActive,
+  isFirst,
   isLast,
   onSelect,
 }: {
   feature: Feature;
   isActive: boolean;
   isLast: boolean;
+  isFirst: boolean;
   onSelect: () => void;
 }) {
   return (
-    <button
-      type="button"
-      onClick={onSelect}
-      className={`
-        group relative w-full text-left p-8 pl-6 transition-all duration-200 cursor-pointer h-40 overflow-hidden
+    <div className="relative border-r ">
+      <BorderEdges tr={isFirst} br={isLast} />
+
+      <button
+        type="button"
+        onClick={onSelect}
+        className={`
+        group relative w-full text-left p-8 py-6 transition-all duration-200 cursor-pointer h-40 overflow-hidden
         ${!isLast ? "border-b border-foreground/10" : ""}
         ${isActive ? "bg-foreground/5" : "hover:bg-foreground/2"}
       `}
-    >
-      {!isLast && <BorderJunction />}
-
-      <div className="flex items-start gap-4">
-        <feature.icon
-          size={24}
-          strokeWidth={1.5}
-          className={`shrink-0 transition-colors ${
-            isActive
-              ? "text-primary"
-              : "text-foreground/60 group-hover:text-primary"
-          }`}
-        />
-        <div className="flex flex-col gap-2">
-          <h3
-            className={`text-lg font-semibold transition-colors ${
+      >
+        <div
+          className={`flex gap-4 w-full ${isActive ? "items-start" : "items-center"}`}
+        >
+          <feature.icon
+            size={24}
+            strokeWidth={1.5}
+            className={`shrink-0 transition-colors ${
               isActive
-                ? "text-foreground"
-                : "text-foreground/60 group-hover:text-foreground"
+                ? "text-primary"
+                : "text-foreground/60 group-hover:text-primary"
             }`}
-          >
-            {feature.title}
-          </h3>
-          <AnimatePresence initial={false}>
-            {isActive && (
-              <motion.p
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.2 }}
-                className="text-sm text-foreground/60 leading-relaxed max-w-md overflow-hidden"
-              >
-                {feature.description}
-              </motion.p>
-            )}
-          </AnimatePresence>
+          />
+          <div className="flex flex-col gap-2">
+            <h3
+              className={`text-lg font-semibold transition-colors ${
+                isActive
+                  ? "text-foreground"
+                  : "text-foreground/60 group-hover:text-foreground"
+              }`}
+            >
+              {feature.title}
+            </h3>
+            <AnimatePresence initial={false}>
+              {isActive && (
+                <motion.p
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="text-sm text-foreground/60 leading-relaxed overflow-hidden pr-10"
+                >
+                  {feature.description}
+                </motion.p>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
-      </div>
-    </button>
+      </button>
+    </div>
   );
 }
 
@@ -180,39 +160,35 @@ export function FeaturesSection() {
   const activeFeature = features.find((f) => f.id === activeId) ?? features[0];
 
   return (
-    <section id="features" className="bg-background">
-      <div className="mx-auto max-w-8xl px-6">
+    <div className="border-y ">
+      <section id="features" className="w-full mx-auto max-w-8xl px-6">
         <div className="relative">
-          <BorderY position="top" />
+          <div className="mx-auto max-w-8xl border-x">
+            <BorderEdges />
+            <div className="relative">
+              <div className="grid lg:grid-cols-2">
+                <div className="relative flex flex-col">
+                  {features.map((feature, index) => (
+                    <FeatureAccordionItem
+                      key={feature.id}
+                      feature={feature}
+                      isActive={feature.id === activeId}
+                      isLast={index === features.length - 1}
+                      isFirst={index === 0}
+                      onSelect={() => setActiveId(feature.id)}
+                    />
+                  ))}
+                </div>
 
-          <div className="pt-16 pb-10 pl-6">
-            <SectionLabel className="mb-4">FEATURES</SectionLabel>
-            <DisplayHeadline className="text-4xl lg:text-5xl max-w-lg">
-              Everything your school needs. Nothing it doesn't.
-            </DisplayHeadline>
-          </div>
-
-          <div className="grid lg:grid-cols-2">
-            <div className="relative flex flex-col">
-              {features.map((feature, index) => (
-                <FeatureAccordionItem
-                  key={feature.id}
-                  feature={feature}
-                  isActive={feature.id === activeId}
-                  isLast={index === features.length - 1}
-                  onSelect={() => setActiveId(feature.id)}
+                <FeatureVisualPanel
+                  activeId={activeId}
+                  visual={activeFeature.visual}
                 />
-              ))}
+              </div>
             </div>
-
-            <FeatureVisualPanel
-              activeId={activeId}
-              visual={activeFeature.visual}
-            />
           </div>
-          <BorderY position="bottom" />
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

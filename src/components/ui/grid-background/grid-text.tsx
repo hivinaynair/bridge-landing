@@ -30,16 +30,16 @@ interface GridTextProps {
 export function GridText({
   text,
   cellSize = 8,
-  dotSize = 6,
+  dotSize = 8,
   gridColor = "#eeedea",
   textColor = "#d0cfc8",
   fontFamily = "sans-serif",
   dotColors = DEFAULT_DOT_COLORS,
-  dotCount = 2,
-  spawnInterval = 200,
-  fadeIn = 200,
-  holdTime = 200,
-  fadeOut = 200,
+  dotCount = 4,
+  spawnInterval = 100,
+  fadeIn = 100,
+  holdTime = 100,
+  fadeOut = 100,
   bgColor = "var(--background)",
   className = "",
 }: GridTextProps) {
@@ -88,14 +88,8 @@ export function GridText({
     let mask = new Set<number>();
 
     const buildBase = (w: number, h: number, dpr: number) => {
-      const {
-        text,
-        cellSize,
-        dotSize,
-        gridColor,
-        textColor,
-        fontFamily,
-      } = cfg.current;
+      const { text, cellSize, dotSize, gridColor, textColor, fontFamily } =
+        cfg.current;
 
       const bw = Math.round(w * dpr);
       const bh = Math.round(h * dpr);
@@ -233,12 +227,7 @@ export function GridText({
 
         ctx.globalAlpha = Math.max(0, Math.min(1, opacity));
         ctx.fillStyle = dot.color;
-        ctx.fillRect(
-          dot.col * cellSize,
-          dot.row * cellSize,
-          dotSize,
-          dotSize,
-        );
+        ctx.fillRect(dot.col * cellSize, dot.row * cellSize, dotSize, dotSize);
         return true;
       });
 
