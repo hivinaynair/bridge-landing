@@ -117,7 +117,7 @@ html {
   --accent: oklch(0.9245 0.0138 92.9892);
   --accent-foreground: oklch(0.2671 0.0196 98.939);
   --destructive: oklch(0.5768 0.1917 22.18);
-  --border: oklch(0.92 0.003 95);
+  --border: oklch(0.92 0.003 92.5);
   --input: oklch(0.7621 0.0156 98.3528);
   --ring: oklch(0.6171 0.1375 39.0427);
   --chart-1: oklch(0.5583 0.1276 42.9956);

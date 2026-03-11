@@ -20,7 +20,7 @@ export function ProductSection() {
           follow-up messages to enquiries you&apos;d otherwise miss.
         </p>
         <Button href="/" variant="primary" className="text-xs group gap-1">
-          TRY BRIDGE FREE <PixelArrow size={28} />
+          GET IN TOUCH <PixelArrow size={28} />
         </Button>
       </div>
     </GridBackground>

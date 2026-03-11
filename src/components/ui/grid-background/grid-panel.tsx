@@ -103,8 +103,8 @@ export function GridPanel({
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, w, h);
 
-      const cols = Math.floor(w / cellSize);
-      const rows = Math.floor(h / cellSize);
+      const cols = Math.ceil(w / cellSize);
+      const rows = Math.ceil(h / cellSize);
 
       // Build offscreen base grid (only when size or color changes)
       const key = `${bw}:${bh}:${gridColor}:${cellSize}:${dotSize}`;

@@ -56,7 +56,7 @@ export function SecuritySection() {
                   key={badge.label}
                   className="flex flex-col items-center gap-5"
                 >
-                  <div className="w-20 h-20 rounded-full border flex items-center justify-center text-muted-foreground">
+                  <div className="w-20 h-20 rounded-full border border-border flex items-center justify-center text-muted-foreground">
                     {badge.icon}
                   </div>
                   <div className="text-center max-w-[200px]">
