@@ -7,8 +7,8 @@ export function AdmissionsVisual() {
       <div className="bg-card rounded-xl shadow-lg border overflow-hidden mb-4">
         <div className="p-6 pb-4">
           {/* Header: Tricolor stripes + Emblem + Aadhaar logo */}
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex flex-col gap-1.5 w-28 pt-1">
+          <div className="grid grid-cols-3 items-start justify-between mb-4 gap-4">
+            <div className="flex flex-col gap-1.5 w-20 pt-1 justify-self-start">
               <div
                 className="h-2 rounded-r-full"
                 style={{
@@ -39,7 +39,7 @@ export function AdmissionsVisual() {
                 GOVERNMENT OF INDIA
               </div>
             </div>
-            <div className="flex flex-col items-center gap-0.5">
+            <div className="flex flex-col items-center gap-0.5 justify-self-end">
               <svg
                 width="36"
                 height="32"
@@ -85,8 +85,8 @@ export function AdmissionsVisual() {
             </div>
           </div>
           {/* Person details */}
-          <div className="flex gap-4 items-start mb-4">
-            <div className="w-16 h-20 rounded bg-muted flex items-center justify-center text-2xl shrink-0 border">
+          <div className="flex gap-6 items-start mb-4">
+            <div className="w-16 h-16 rounded bg-muted flex items-center justify-center text-2xl shrink-0 border">
               👤
             </div>
             <div className="pt-1">
@@ -98,7 +98,7 @@ export function AdmissionsVisual() {
             </div>
           </div>
           {/* Aadhaar number */}
-          <div className="text-xl font-extrabold text-foreground tracking-[0.2em] text-center">
+          <div className="text-xl font-extrabold text-foreground tracking-[0.2em] text-center pl-4">
             XXXX XXXX 4321
           </div>
         </div>
