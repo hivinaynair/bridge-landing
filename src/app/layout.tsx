@@ -20,7 +20,7 @@ const robotoMono = Roboto_Mono({
   weight: ["300", "400", "500", "600"],
 });
 export const metadata: Metadata = {
-  title: "Bridge — Modern Software for Indian Driving Schools",
+  title: "Bridge — Smart Software for Indian Driving Schools",
   description:
     "Replace your legacy driving school software. 3-minute admissions with Aadhaar KYC, WhatsApp lead recovery, automated upsells, and Sarathi auto-fill.",
 };
