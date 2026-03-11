@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { BookDemoButton } from "@/components/contact-modal";
 import { DisplayHeadline } from "@/components/ui/display-headline";
 import { SectionLabel } from "@/components/ui/section-label";
 import { GridBackground } from "./ui/grid-background/grid-background";
@@ -19,9 +19,9 @@ export function ProductSection() {
           Bridge fills in student forms for you, tracks every rupee, and sends
           follow-up messages to enquiries you&apos;d otherwise miss.
         </p>
-        <Button href="/" variant="primary" className="text-xs group gap-1">
+        <BookDemoButton variant="primary" className="text-xs group gap-1">
           GET IN TOUCH <PixelArrow size={28} />
-        </Button>
+        </BookDemoButton>
       </div>
     </GridBackground>
   );

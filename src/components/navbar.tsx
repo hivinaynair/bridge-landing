@@ -1,25 +1,24 @@
 "use client";
 
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { Menu, X } from "lucide-react";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const NAV_LINKS = [
-  { href: "#product", label: "Product" },
-  { href: "#capabilities", label: "Features" },
-  { href: "#pricing", label: "Pricing" },
+  { href: "/#product", label: "Product" },
+  { href: "/#capabilities", label: "Features" },
+  { href: "/#pricing", label: "Pricing" },
 ] as const;
 
-function MobileMenu({
-  open,
-  onClose,
-}: {
-  open: boolean;
-  onClose: () => void;
-}) {
+function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   return (
     <AnimatePresence>
       {open && (

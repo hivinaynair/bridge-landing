@@ -1,0 +1,114 @@
+<h2>Proposed Mobile Layout Changes</h2>
+<p class="subtitle">375px minimum width, slide-out nav, stacked sections</p>
+
+<div style="display: flex; gap: 32px; flex-wrap: wrap; justify-content: center; margin-top: 24px;">
+
+  <!-- Mobile Navbar -->
+  <div style="width: 375px; border: 1px solid #333; border-radius: 12px; overflow: hidden; background: #111;">
+    <div style="padding: 8px 12px; font-size: 11px; color: #666; text-align: center; border-bottom: 1px solid #222;">NAVBAR (mobile)</div>
+
+    <!-- Navbar bar -->
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 16px; background: #0a0a0a; border-bottom: 1px solid #222;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <div style="width: 28px; height: 28px; background: #444; border-radius: 6px;"></div>
+        <span style="color: #eee; font-weight: 600; font-size: 18px;">Bridge</span>
+      </div>
+      <!-- Hamburger -->
+      <div style="display: flex; flex-direction: column; gap: 4px; cursor: pointer; padding: 4px;">
+        <div style="width: 20px; height: 2px; background: #ccc;"></div>
+        <div style="width: 20px; height: 2px; background: #ccc;"></div>
+        <div style="width: 20px; height: 2px; background: #ccc;"></div>
+      </div>
+    </div>
+
+    <!-- Slide-out sheet preview -->
+    <div style="background: #0f0f0f; padding: 32px 24px; border-left: 3px solid #555;">
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <a style="color: #ccc; text-decoration: none; font-size: 14px; font-weight: 700; letter-spacing: 2px;">PRODUCT</a>
+        <a style="color: #ccc; text-decoration: none; font-size: 14px; font-weight: 700; letter-spacing: 2px;">FEATURES</a>
+        <a style="color: #ccc; text-decoration: none; font-size: 14px; font-weight: 700; letter-spacing: 2px;">PRICING</a>
+        <div style="margin-top: 8px; padding: 12px 24px; background: #e8e4d9; color: #111; text-align: center; font-weight: 700; font-size: 12px; letter-spacing: 1px; border-radius: 4px;">LOG IN</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Hero -->
+  <div style="width: 375px; border: 1px solid #333; border-radius: 12px; overflow: hidden; background: #111;">
+    <div style="padding: 8px 12px; font-size: 11px; color: #666; text-align: center; border-bottom: 1px solid #222;">HERO (mobile) — stacked, tighter padding</div>
+    <div style="padding: 24px 16px 32px;">
+      <div style="display: inline-block; border: 1px solid #333; border-radius: 99px; padding: 4px 12px; font-size: 11px; color: #aaa; margin-bottom: 16px;">
+        <span style="display: inline-block; width: 6px; height: 6px; background: #c4a35a; border-radius: 50; margin-right: 6px;"></span>
+        Launching Across India
+      </div>
+      <div style="font-family: serif; font-size: 32px; color: #eee; line-height: 1.15; margin-bottom: 20px;">
+        Everything your<br>Driving school needs.<br>In one app.
+      </div>
+      <p style="color: #888; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">
+        Admit students in under 3 minutes with Aadhaar KYC. Automatically follow up with every enquiry on WhatsApp.
+      </p>
+      <div style="display: flex; gap: 8px;">
+        <div style="padding: 10px 18px; background: #e8e4d9; color: #111; font-size: 11px; font-weight: 700; letter-spacing: 1px; border-radius: 4px;">GET STARTED →</div>
+        <div style="padding: 10px 18px; border: 1px solid #444; color: #ccc; font-size: 11px; font-weight: 700; letter-spacing: 1px; border-radius: 4px;">BOOK A DEMO</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Footer -->
+  <div style="width: 375px; border: 1px solid #333; border-radius: 12px; overflow: hidden; background: #111;">
+    <div style="padding: 8px 12px; font-size: 11px; color: #666; text-align: center; border-bottom: 1px solid #222;">FOOTER (mobile) — stacked columns</div>
+    <div style="padding: 24px 16px;">
+      <!-- Brand -->
+      <div style="margin-bottom: 24px;">
+        <div style="width: 36px; height: 36px; background: #444; border-radius: 8px; margin-bottom: 12px;"></div>
+        <p style="color: #888; font-size: 13px; line-height: 1.6; margin-bottom: 12px;">
+          Modern software for Indian driving schools. Digitise admissions, automate workflows, and grow revenue.
+        </p>
+        <span style="color: #666; font-size: 11px;">© 2026 Vinay Nair</span>
+      </div>
+      <!-- Links side by side -->
+      <div style="display: flex; gap: 48px; padding-top: 20px; border-top: 1px solid #222;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a style="color: #888; font-size: 11px; letter-spacing: 1px; text-decoration: none;">FEATURES</a>
+          <a style="color: #888; font-size: 11px; letter-spacing: 1px; text-decoration: none;">PRICING</a>
+          <a style="color: #888; font-size: 11px; letter-spacing: 1px; text-decoration: none;">CONTACT</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a style="color: #888; font-size: 11px; letter-spacing: 1px; text-decoration: none;">PRIVACY</a>
+          <a style="color: #888; font-size: 11px; letter-spacing: 1px; text-decoration: none;">TERMS</a>
+          <a style="color: #888; font-size: 11px; letter-spacing: 1px; text-decoration: none;">COOKIES</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Security -->
+  <div style="width: 375px; border: 1px solid #333; border-radius: 12px; overflow: hidden; background: #111;">
+    <div style="padding: 8px 12px; font-size: 11px; color: #666; text-align: center; border-bottom: 1px solid #222;">SECURITY (mobile) — 2-col grid, smaller icons</div>
+    <div style="padding: 24px 16px; text-align: center;">
+      <div style="font-family: serif; font-size: 24px; color: #eee; margin-bottom: 16px;">Enterprise-grade security</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px 12px;">
+        <div style="text-align: center;">
+          <div style="width: 48px; height: 48px; border: 1px solid #333; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: #888; font-size: 18px;">🔒</div>
+          <div style="color: #ddd; font-size: 12px; font-weight: 600;">Aadhaar Encrypted</div>
+          <div style="color: #777; font-size: 10px; margin-top: 2px;">At rest & in transit</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="width: 48px; height: 48px; border: 1px solid #333; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: #888; font-size: 18px;">☁️</div>
+          <div style="color: #ddd; font-size: 12px; font-weight: 600;">Cloud Secured</div>
+          <div style="color: #777; font-size: 10px; margin-top: 2px;">99.9% uptime</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="width: 48px; height: 48px; border: 1px solid #333; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: #888; font-size: 18px;">💰</div>
+          <div style="color: #ddd; font-size: 12px; font-weight: 600;">Secure Payments</div>
+          <div style="color: #777; font-size: 10px; margin-top: 2px;">Bank-grade encryption</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="width: 48px; height: 48px; border: 1px solid #333; border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; color: #888; font-size: 18px;">🏠</div>
+          <div style="color: #ddd; font-size: 12px; font-weight: 600;">Branch Isolated</div>
+          <div style="color: #777; font-size: 10px; margin-top: 2px;">No cross-access</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

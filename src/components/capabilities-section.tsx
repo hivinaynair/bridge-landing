@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import { Building2, Car, Globe, MessageCircle, UserCheck } from "lucide-react";
-import { BorderEdges, Button, DisplayHeadline, SectionLabel } from "./ui";
+import { BookDemoButton } from "./contact-modal";
+import { BorderEdges, DisplayHeadline, SectionLabel } from "./ui";
 import { GridBackground } from "./ui/grid-background/grid-background";
 import { PixelArrow } from "./ui/pixer-arrow";
 
@@ -20,9 +21,9 @@ export function CapabilitiesHeading() {
         <p className="text-muted-foreground text-base max-w-md mx-auto mb-8 leading-relaxed">
           Multiple branches, multiple vehicles, one dashboard.
         </p>
-        <Button href="/" variant="primary" className="text-xs group gap-1">
+        <BookDemoButton variant="primary" className="text-xs group gap-1">
           GET IN TOUCH <PixelArrow size={28} />
-        </Button>
+        </BookDemoButton>
       </div>
     </GridBackground>
   );

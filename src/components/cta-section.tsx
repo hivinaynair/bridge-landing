@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { BookDemoButton } from "@/components/contact-modal";
 import { DisplayHeadline } from "@/components/ui/display-headline";
 
 export function CtaSection() {
@@ -29,12 +29,12 @@ export function CtaSection() {
                 you're leaving on the table with your current setup.
               </p>
               <div className="flex gap-3 justify-center flex-wrap">
-                <Button href="/" variant="muted">
+                <BookDemoButton variant="muted">
                   GET STARTED
-                </Button>
-                <Button href="/" variant="outline-white">
+                </BookDemoButton>
+                <BookDemoButton variant="outline-white">
                   BOOK A DEMO
-                </Button>
+                </BookDemoButton>
               </div>
             </div>
           </div>{" "}

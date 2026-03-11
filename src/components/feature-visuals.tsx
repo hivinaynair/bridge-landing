@@ -3,24 +3,113 @@ import { WaBubble } from "@/components/ui/wa-bubble";
 
 export function AdmissionsVisual() {
   return (
-    <div className="w-full max-w-sm">
-      <div className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-lg p-5 mb-4 text-white relative overflow-hidden">
-        <div className="absolute -top-5 -right-5 w-20 h-20 rounded-full bg-white/10" />
-        <div className="text-2xs opacity-70 tracking-widest mb-2">
-          AADHAAR — INDIA
-        </div>
-        <div className="flex gap-4 items-center">
-          <div className="w-11 h-11 rounded-full bg-white/20 flex items-center justify-center text-2xl">
-            👤
+    <div className="w-full max-w-lg">
+      <div className="bg-card rounded-xl shadow-lg border overflow-hidden mb-4">
+        <div className="p-6 pb-4">
+          {/* Header: Tricolor stripes + Emblem + Aadhaar logo */}
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex flex-col gap-1.5 w-28 pt-1">
+              <div
+                className="h-2 rounded-r-full"
+                style={{
+                  background: "linear-gradient(to right, #FF9933, transparent)",
+                }}
+              />
+              <div
+                className="h-2 rounded-r-full"
+                style={{
+                  background: "linear-gradient(to right, #138808, transparent)",
+                }}
+              />
+            </div>
+            <div className="text-center">
+              <div
+                className="text-lg leading-none"
+                style={{ color: "#4B3621" }}
+              >
+                ☸
+              </div>
+              <div
+                className="text-foreground/60 leading-tight"
+                style={{ fontSize: "6px" }}
+              >
+                सत्यमेव जयते
+              </div>
+              <div className="text-[9px] font-bold tracking-wider text-foreground/70 mt-0.5">
+                GOVERNMENT OF INDIA
+              </div>
+            </div>
+            <div className="flex flex-col items-center gap-0.5">
+              <svg
+                width="36"
+                height="32"
+                viewBox="0 0 30 30"
+                fill="none"
+                aria-hidden="true"
+              >
+                <circle
+                  cx="15"
+                  cy="15"
+                  r="13"
+                  stroke="#E8421E"
+                  strokeWidth="1.8"
+                  fill="none"
+                  opacity="0.3"
+                />
+                <circle
+                  cx="15"
+                  cy="15"
+                  r="9.5"
+                  stroke="#E8421E"
+                  strokeWidth="1.8"
+                  fill="none"
+                  opacity="0.5"
+                />
+                <circle
+                  cx="15"
+                  cy="15"
+                  r="6"
+                  stroke="#E8421E"
+                  strokeWidth="1.8"
+                  fill="none"
+                  opacity="0.7"
+                />
+                <circle cx="15" cy="15" r="2.5" fill="#E8421E" />
+              </svg>
+              <div
+                className="text-[9px] font-extrabold tracking-wide"
+                style={{ color: "#C41E1E" }}
+              >
+                AADHAAR
+              </div>
+            </div>
           </div>
-          <div>
-            <div className="font-bold text-base">Ravi Kumar</div>
-            <div className="text-xs opacity-70">DOB: 14/03/1998</div>
-            <div className="text-xs opacity-70">Male</div>
+          {/* Person details */}
+          <div className="flex gap-4 items-start mb-4">
+            <div className="w-16 h-20 rounded bg-muted flex items-center justify-center text-2xl shrink-0 border">
+              👤
+            </div>
+            <div className="pt-1">
+              <div className="font-bold text-lg text-foreground tracking-wide">
+                Ravi Kumar
+              </div>
+              <div className="text-xs text-foreground/70 mt-0.5">Male</div>
+              <div className="text-xs text-foreground/70">14/03/1998</div>
+            </div>
+          </div>
+          {/* Aadhaar number */}
+          <div className="text-xl font-extrabold text-foreground tracking-[0.2em] text-center">
+            XXXX XXXX 4321
           </div>
         </div>
-        <div className="mt-3 text-base font-semibold tracking-widest">
-          XXXX XXXX 4321
+        {/* MY AADHAAR footer */}
+        <div
+          className="border-t-2 py-2 text-center"
+          style={{ borderColor: "#8B0000" }}
+        >
+          <div className="text-[9px] font-extrabold tracking-[0.25em] text-foreground/70">
+            MY AADHAAR
+          </div>
         </div>
       </div>
       <div className="text-center mb-4 text-2xl text-primary">↓</div>

@@ -11,6 +11,7 @@ const LEFT_LINKS = [
 const RIGHT_LINKS = [
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Service", href: "/terms-of-service" },
+  { label: "Refund Policy", href: "/refund-policy" },
 ];
 
 export function Footer() {

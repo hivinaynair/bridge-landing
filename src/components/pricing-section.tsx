@@ -1,5 +1,6 @@
 import { Check, Minus } from "lucide-react";
-import { BorderEdges, Button, DisplayHeadline, SectionLabel } from "./ui";
+import { BookDemoButton } from "./contact-modal";
+import { BorderEdges, DisplayHeadline, SectionLabel } from "./ui";
 
 const essentialsFeatures = [
   { text: "5-minute student admission", included: true },
@@ -96,9 +97,9 @@ export function PricingSection() {
                   </ul>
                 </div>
 
-                <Button href="/" variant="outline" className="justify-center w-full">
+                <BookDemoButton variant="outline" className="justify-center w-full">
                   GET STARTED
-                </Button>
+                </BookDemoButton>
               </div>
 
               {/* Growth */}
@@ -142,9 +143,9 @@ export function PricingSection() {
                   </ul>
                 </div>
 
-                <Button href="/" variant="primary" className="justify-center w-full">
+                <BookDemoButton variant="primary" className="justify-center w-full">
                   GET STARTED
-                </Button>
+                </BookDemoButton>
               </div>
             </div>
 

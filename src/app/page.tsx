@@ -11,7 +11,7 @@ import {
   PricingSection,
   ProductSection,
 } from "@/components";
-import { HeroVideo } from "@/components/hero-video";
+// import { HeroVideo } from "@/components/hero-video";
 import { SecuritySection } from "@/components/security-section";
 
 export default function Page() {
@@ -19,7 +19,7 @@ export default function Page() {
     <main className="pt-[72px]">
       <Navbar />
       <Hero />
-      <HeroVideo />
+      {/* <HeroVideo /> */}
       <ProductSection />
       <FeaturesSection />
       <SecuritySection />
