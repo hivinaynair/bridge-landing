@@ -10,7 +10,7 @@ export function Hero() {
       <section className="w-full mx-auto max-w-8xl px-6">
         <div className="relative">
           <BorderEdges />
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center p-6 py-12 lg:p-12 lg:py-20 border-x ">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center px-3 py-12 lg:p-12 lg:py-20 border-x">
             <div className="flex flex-col gap-6">
               <TrustBadge>
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary" />
@@ -18,10 +18,10 @@ export function Hero() {
               </TrustBadge>
               <DisplayHeadline
                 as="h1"
-                className="m-0 text-[clamp(40px,5vw,60px)] mb-6"
+                className="m-0 text-[clamp(32px,5vw,60px)] mb-6"
               >
-                Everything your <br />
-                Driving school needs. <br /> In one app.
+                Everything your <br className="hidden lg:block" />
+                Driving school needs. <br className="hidden lg:block" /> In one app.
               </DisplayHeadline>
             </div>
 
@@ -32,7 +32,7 @@ export function Hero() {
                 every rupee in one place.
               </p>
 
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
                 <Button href="/" variant="primary" className="group gap-2">
                   GET STARTED
                   <PixelArrow
