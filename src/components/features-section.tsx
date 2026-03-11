@@ -63,7 +63,6 @@ const features: Feature[] = [
 function FeatureAccordionItem({
   feature,
   isActive,
-  isFirst,
   isLast,
   onSelect,
 }: {
@@ -75,7 +74,7 @@ function FeatureAccordionItem({
 }) {
   return (
     <div className="relative border-r ">
-      <BorderEdges tr={isFirst} br={isLast} />
+      {/* <BorderEdges tr={isFirst} br={isLast} /> */}
 
       <button
         type="button"

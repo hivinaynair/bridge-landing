@@ -4,7 +4,7 @@ import { DisplayHeadline } from "@/components/ui/display-headline";
 import { BorderEdges } from "./ui";
 
 const badges = [
-{
+  {
     icon: <Cloud size={32} strokeWidth={1.2} aria-hidden="true" />,
     label: "Cloud Secured",
     sub: "Hosted on enterprise-grade cloud infrastructure with 99.9% uptime",
@@ -45,7 +45,7 @@ export function SecuritySection() {
               users.
             </p>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 lg:gap-x-8 lg:gap-y-12 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-2 gap-y-8 lg:gap-x-4 lg:gap-y-12 max-w-3xl mx-auto">
               {badges.map((badge) => (
                 <div
                   key={badge.label}
