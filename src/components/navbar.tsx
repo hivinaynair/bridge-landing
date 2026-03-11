@@ -1,6 +1,7 @@
 "use client";
 
-import { useMotionValueEvent, useScroll } from "motion/react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -12,8 +13,70 @@ const NAV_LINKS = [
   { href: "#pricing", label: "Pricing" },
 ] as const;
 
+function MobileMenu({
+  open,
+  onClose,
+}: {
+  open: boolean;
+  onClose: () => void;
+}) {
+  return (
+    <AnimatePresence>
+      {open && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 bg-background/60 backdrop-blur-sm"
+            onClick={onClose}
+          />
+          {/* Sheet */}
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed top-0 right-0 z-50 h-dvh w-72 border-l bg-background p-8 pt-24"
+          >
+            <button
+              type="button"
+              onClick={onClose}
+              className="absolute top-6 right-6 text-muted-foreground hover:text-foreground"
+            >
+              <X size={24} />
+            </button>
+
+            <nav className="flex flex-col gap-6">
+              {NAV_LINKS.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  onClick={onClose}
+                  className="text-sm font-bold uppercase tracking-widest hover:text-foreground"
+                >
+                  {label}
+                </Link>
+              ))}
+              <Button
+                href="https://app.bridgedrive.in/sign-in"
+                variant="primary"
+                className="mt-4 justify-center"
+              >
+                LOG IN
+              </Button>
+            </nav>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (current) => {
@@ -33,12 +96,12 @@ export function Navbar() {
           className={`mx-auto transition-all duration-300 ${
             scrolled
               ? "max-w-[1440px] border border-foreground/10 bg-background/70 shadow-lg shadow-foreground/5 backdrop-blur-xl"
-              : "max-w-[1600px] bg-transparent px-14"
+              : "max-w-[1600px] bg-transparent lg:px-14"
           }`}
         >
           <div
-            className={`flex items-center justify-between transition-all duration-300 h-[72px]  ${
-              scrolled ? "px-4 lg:px-10" : " px-4 lg:px-6"
+            className={`flex items-center justify-between transition-all duration-300 h-[72px] ${
+              scrolled ? "px-4 lg:px-10" : "px-4 lg:px-6"
             }`}
           >
             {/* Logo */}
@@ -49,8 +112,8 @@ export function Navbar() {
               </span>
             </Link>
 
-            {/* Nav links + CTA */}
-            <div className="flex items-center gap-10">
+            {/* Desktop nav links + CTA */}
+            <div className="hidden lg:flex items-center gap-10">
               <div className="flex items-center gap-10">
                 {NAV_LINKS.map(({ href, label }) => (
                   <Link
@@ -71,9 +134,20 @@ export function Navbar() {
                 LOG IN
               </Button>
             </div>
+
+            {/* Mobile hamburger */}
+            <button
+              type="button"
+              onClick={() => setMenuOpen(true)}
+              className="lg:hidden text-foreground"
+            >
+              <Menu size={24} />
+            </button>
           </div>
         </nav>
       </div>
+
+      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
     </div>
   );
 }
