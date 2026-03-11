@@ -10,7 +10,7 @@ export function Hero() {
       <section className="w-full mx-auto max-w-8xl px-6">
         <div className="relative">
           <BorderEdges />
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center p-12 py-20 border-x ">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center p-6 py-12 lg:p-12 lg:py-20 border-x ">
             <div className="flex flex-col gap-6">
               <TrustBadge>
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary" />

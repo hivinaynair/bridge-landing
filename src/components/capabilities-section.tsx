@@ -12,7 +12,7 @@ export function CapabilitiesHeading() {
           CAPABILITIES
         </SectionLabel>
         <div className="flex items-center gap-2 relative">
-          <DisplayHeadline className="m-0 mb-5 text-5xl max-w-xl mx-auto">
+          <DisplayHeadline className="m-0 mb-5 text-3xl lg:text-5xl max-w-xl mx-auto">
             Built for how driving schools actually work.
           </DisplayHeadline>
         </div>
@@ -90,7 +90,7 @@ export function CapabilitiesCards() {
             {capabilities.map((cap, i) => (
               <div
                 key={cap.title}
-                className={`relative grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-8 border-b last:border-b-0 ${i === 0 ? "py-20 px-8 lg:px-12" : "py-16 px-8 lg:px-12"}`}
+                className={`relative grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-8 border-b last:border-b-0 ${i === 0 ? "py-12 lg:py-20 px-4 lg:px-12" : "py-10 lg:py-16 px-4 lg:px-12"}`}
               >
                 <BorderEdges />
                 <div>

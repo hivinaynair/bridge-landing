@@ -1,13 +1,22 @@
 import Image from "next/image";
+import Link from "next/link";
 import { GridText } from "@/components/ui/grid-background/grid-text";
 
-const LEFT_LINKS = ["Features", "Pricing", "Contact"];
-const RIGHT_LINKS = ["Privacy Policy", "Terms of Service", "Cookie Policy"];
+const LEFT_LINKS = [
+  { label: "Features", href: "/#product" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Contact", href: "mailto:hello@bridgedriving.in" },
+];
+
+const RIGHT_LINKS = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms-of-service" },
+];
 
 export function Footer() {
   return (
-    <footer className="pt-28">
-      <div className="flex justify-between gap-12 mx-auto max-w-8xl px-20">
+    <footer className="pt-16 lg:pt-28">
+      <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-12 mx-auto max-w-8xl px-6 lg:px-20">
         {/* Left — brand */}
         <div className="max-w-md flex flex-col gap-6">
           <Image src="/arch.svg" alt="Bridge" width={50} height={50} />
@@ -23,28 +32,28 @@ export function Footer() {
         </div>
 
         {/* Right — link columns */}
-        <div className="flex gap-24">
+        <div className="flex gap-12 lg:gap-24">
           <ul className="list-none p-0 m-0 space-y-3">
             {LEFT_LINKS.map((link) => (
-              <li key={link}>
-                <a
-                  href="/"
+              <li key={link.label}>
+                <Link
+                  href={link.href}
                   className="font-roboto-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground no-underline"
                 >
-                  {link}
-                </a>
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
           <ul className="list-none p-0 m-0 space-y-3">
             {RIGHT_LINKS.map((link) => (
-              <li key={link}>
-                <a
-                  href="/"
+              <li key={link.label}>
+                <Link
+                  href={link.href}
                   className="font-roboto-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground no-underline"
                 >
-                  {link}
-                </a>
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -52,7 +61,7 @@ export function Footer() {
       </div>
 
       {/* Mosaic grid text */}
-      <div className="w-full h-[30rem] overflow-hidden pt-28">
+      <div className="w-full h-48 lg:h-[30rem] overflow-hidden pt-16 lg:pt-28">
         <GridText
           text="Bridge"
           cellSize={8}

@@ -81,7 +81,7 @@ function FeatureAccordionItem({
         type="button"
         onClick={onSelect}
         className={`
-        group relative w-full text-left p-8 py-6 transition-all duration-200 cursor-pointer h-40 overflow-hidden
+        group relative w-full text-left p-8 py-6 transition-all duration-200 cursor-pointer h-auto min-h-[10rem] overflow-hidden
         ${!isLast ? "border-b border-foreground/10" : ""}
         ${isActive ? "bg-foreground/5" : "hover:bg-foreground/2"}
       `}

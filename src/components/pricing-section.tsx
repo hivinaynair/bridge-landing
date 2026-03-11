@@ -30,7 +30,7 @@ export function PricingSection() {
       <section className="w-full mx-auto max-w-8xl px-6">
         <div className="relative">
           <BorderEdges />
-          <div className="border-x p-12 py-28">
+          <div className="border-x p-4 py-16 lg:p-12 lg:py-28">
             {/* Header */}
             <div className="text-center mb-16">
               <SectionLabel className="justify-center mb-6">

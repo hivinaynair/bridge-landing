@@ -32,7 +32,7 @@ export function SecuritySection() {
       <section className="w-full mx-auto max-w-8xl px-6">
         <div className="relative">
           <BorderEdges />
-          <div className="text-center border-x p-12 py-28">
+          <div className="text-center border-x p-6 py-16 lg:p-12 lg:py-28">
             <div className="text-[14px] font-medium uppercase tracking-widest text-muted-foreground mb-6 flex items-center justify-center gap-2">
               <span className="opacity-40">/</span>
               YOUR DATA IS SAFE
@@ -50,13 +50,13 @@ export function SecuritySection() {
               users.
             </p>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 lg:gap-x-8 lg:gap-y-12 max-w-4xl mx-auto">
               {badges.map((badge) => (
                 <div
                   key={badge.label}
                   className="flex flex-col items-center gap-5"
                 >
-                  <div className="w-20 h-20 rounded-full border border-border flex items-center justify-center text-muted-foreground">
+                  <div className="w-12 h-12 lg:w-20 lg:h-20 rounded-full border border-border flex items-center justify-center text-muted-foreground">
                     {badge.icon}
                   </div>
                   <div className="text-center max-w-[200px]">

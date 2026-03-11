@@ -10,7 +10,7 @@ export function ProductSection() {
       <div id="product" className="mx-auto px-6 py-20 text-center ">
         <SectionLabel className="justify-center mb-6">PRODUCT</SectionLabel>
         <div className="flex items-center gap-2 relative">
-          <DisplayHeadline className="m-0 mb-5 text-5xl max-w-xl mx-auto">
+          <DisplayHeadline className="m-0 mb-5 text-3xl lg:text-5xl max-w-xl mx-auto">
             Less typing. More students.
           </DisplayHeadline>
         </div>
