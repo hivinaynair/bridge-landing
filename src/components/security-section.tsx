@@ -1,15 +1,10 @@
-import { Cloud, DollarSign, Home, Lock } from "lucide-react";
+import { Cloud, DollarSign, Home } from "lucide-react";
 
 import { DisplayHeadline } from "@/components/ui/display-headline";
 import { BorderEdges } from "./ui";
 
 const badges = [
-  {
-    icon: <Lock size={32} strokeWidth={1.2} aria-hidden="true" />,
-    label: "Aadhaar Encrypted",
-    sub: "Aadhaar data encrypted at rest & in transit per UIDAI guidelines",
-  },
-  {
+{
     icon: <Cloud size={32} strokeWidth={1.2} aria-hidden="true" />,
     label: "Cloud Secured",
     sub: "Hosted on enterprise-grade cloud infrastructure with 99.9% uptime",

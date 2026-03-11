@@ -20,11 +20,11 @@ export function Hero() {
                 as="h1"
                 className="m-0 text-[clamp(32px,5vw,60px)] mb-6"
               >
-                Everything your driving school needs. In one app.
+                Everything Your <br /> Driving School Needs. <br /> In One App.
               </DisplayHeadline>
             </div>
 
-            <div className="lg:pt-8 mx-auto">
+            <div className="lg:pt-4 mx-auto">
               <p className="text text-muted-foreground mb-8 leading-relaxed max-w-md">
                 Bridge handles admissions, scheduling, payments, and student
                 follow-ups for driving schools across India
