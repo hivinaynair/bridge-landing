@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 const NAV_LINKS = [
   { href: "#product", label: "Product" },
-  { href: "#features", label: "Features" },
+  { href: "#capabilities", label: "Features" },
   { href: "#pricing", label: "Pricing" },
 ] as const;
 
@@ -63,7 +63,11 @@ export function Navbar() {
                 ))}
               </div>
 
-              <Button href="/login" variant="primary" className="px-4! py-2!">
+              <Button
+                href="https://app.bridgedrive.in/sign-in"
+                variant="primary"
+                className="px-4! py-2!"
+              >
                 LOG IN
               </Button>
             </div>

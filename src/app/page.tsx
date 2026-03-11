@@ -8,6 +8,7 @@ import {
   Footer,
   Hero,
   Navbar,
+  PricingSection,
   ProductSection,
 } from "@/components";
 import { HeroVideo } from "@/components/hero-video";
@@ -25,6 +26,7 @@ export default function Page() {
 
       <CapabilitiesHeading />
       <CapabilitiesCards />
+      <PricingSection />
       <CtaSection />
 
       <Footer />

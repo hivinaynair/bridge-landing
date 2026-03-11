@@ -1,13 +1,8 @@
 import Image from "next/image";
 import { GridText } from "@/components/ui/grid-background/grid-text";
 
-const LEFT_LINKS = ["Features", "Pricing", "Blog", "Status Page"];
-const RIGHT_LINKS = [
-  "Privacy Policy",
-  "Terms of Service",
-  "Cookie Policy",
-  "Contact",
-];
+const LEFT_LINKS = ["Features", "Pricing", "Contact"];
+const RIGHT_LINKS = ["Privacy Policy", "Terms of Service", "Cookie Policy"];
 
 export function Footer() {
   return (
