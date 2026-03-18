@@ -41,7 +41,7 @@ export function PricingSection() {
   const [billing, setBilling] = useState<"monthly" | "annual">("monthly");
 
   const starterPrice = billing === "monthly" ? "₹2,499" : "₹1,999";
-  const proPrice = billing === "monthly" ? "₹3,499" : "₹2,799";
+  const proPrice = billing === "monthly" ? "₹3,999" : "₹3,499";
 
   return (
     <div id="pricing" className="border-y">
