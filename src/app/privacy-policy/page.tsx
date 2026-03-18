@@ -149,7 +149,22 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="font-serif text-xl text-foreground mb-3">
-              7. Data Security
+              7. Chrome Extension ("Bridge - Sarathi Auto-Fill")
+            </h2>
+            <p>
+              Our Chrome extension accesses sarathi.parivahan.gov.in to
+              auto-fill driving licence application forms using student data
+              already stored in Bridge. The extension authenticates via your
+              existing Bridge account and does not collect, store, or transmit
+              any additional data beyond what is described above. No data is
+              read from the Sarathi portal. The extension requires cookies
+              permission solely for authentication and does not track browsing
+              activity.
+            </p>
+          </section>
+          <section>
+            <h2 className="font-serif text-xl text-foreground mb-3">
+              8. Data Security
             </h2>
             <p>
               We implement industry-standard security measures including
@@ -161,7 +176,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="font-serif text-xl text-foreground mb-3">
-              8. Your Rights
+              9. Your Rights
             </h2>
             <p>
               Under India&apos;s Digital Personal Data Protection Act (DPDP),
@@ -182,7 +197,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="font-serif text-xl text-foreground mb-3">
-              9. Changes to This Policy
+              10. Changes to This Policy
             </h2>
             <p>
               We may update this policy from time to time. We will notify
@@ -193,7 +208,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="font-serif text-xl text-foreground mb-3">
-              10. Contact
+              11. Contact
             </h2>
             <p>
               For privacy-related inquiries, reach us at{" "}
