@@ -73,15 +73,13 @@ function FeatureAccordionItem({
   onSelect: () => void;
 }) {
   return (
-    <div className="relative border-r ">
-      {/* <BorderEdges tr={isFirst} br={isLast} /> */}
-
+    <div className="relative border-r">
       <button
         type="button"
         onClick={onSelect}
         className={`
         group relative w-full text-left p-8 py-6 transition-all duration-200 cursor-pointer h-auto min-h-[10rem] overflow-hidden
-        ${!isLast ? "border-b border-foreground/10" : ""}
+        ${!isLast || isActive ? "border-b border-foreground/10" : ""}
         ${isActive ? "bg-foreground/5" : "hover:bg-foreground/2"}
       `}
       >
@@ -123,6 +121,25 @@ function FeatureAccordionItem({
           </div>
         </div>
       </button>
+
+      {/* Mobile-only inline visual shown below the active item */}
+      <AnimatePresence initial={false}>
+        {isActive && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25 }}
+            className={`lg:hidden overflow-hidden bg-foreground/5 ${!isLast ? "border-b border-foreground/10" : ""}`}
+          >
+            <div className="flex items-center justify-center py-4 overflow-hidden">
+              <div style={{ zoom: 0.55 }}>
+                {feature.visual}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -135,7 +152,7 @@ function FeatureVisualPanel({
   visual: React.ReactNode;
 }) {
   return (
-    <div className="relative p-2 lg:p-6">
+    <div className="relative p-2 lg:p-6 flex-1">
       <div className="relative h-full flex items-center justify-center overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
@@ -179,10 +196,12 @@ export function FeaturesSection() {
                   ))}
                 </div>
 
-                <FeatureVisualPanel
-                  activeId={activeId}
-                  visual={activeFeature.visual}
-                />
+                <div className="hidden lg:flex">
+                  <FeatureVisualPanel
+                    activeId={activeId}
+                    visual={activeFeature.visual}
+                  />
+                </div>
               </div>
             </div>
           </div>
