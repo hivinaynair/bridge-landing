@@ -32,7 +32,7 @@ const enterpriseFeatures = [
 const proFeatures = [
   { text: "Everything in Starter", highlighted: false },
   { text: "Sarathi auto-fill Chrome plugin", highlighted: true },
-  { text: "1,000 WhatsApp messages/month", highlighted: true },
+  { text: "1,500 WhatsApp messages/month", highlighted: true },
   { text: "Lead recovery pipeline", highlighted: true },
   { text: "Promotional campaigns", highlighted: true },
 ];
@@ -93,7 +93,7 @@ export function PricingSection() {
                   </button>
                 </div>
                 <span className="text-[11px] font-semibold text-primary uppercase tracking-[0.05em]">
-                  Save 20%
+                  Save 12%
                 </span>
               </div>
             </div>
