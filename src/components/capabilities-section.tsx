@@ -40,9 +40,9 @@ const capabilities: {
 }[] = [
   {
     icon: MessageCircle,
-    title: "Alumni Campaigns",
+    title: "WhatsApp Follow-ups",
     description:
-      "Bridge automatically reminds clients when their \u2019s License is expiring, sends referral offers, and runs family discount campaigns \u2014 all on WhatsApp.",
+      "Bridge automatically reminds clients when their \u2019s License is expiring, sends referral offers, and runs discount campaigns \u2014 all on WhatsApp.",
     stat: "4 touchpoints",
     statSub: "automated",
   },

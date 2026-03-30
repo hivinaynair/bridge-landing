@@ -31,15 +31,15 @@ const features: Feature[] = [
     title: "Quick Admissions",
     icon: Zap,
     description:
-      "Enter a student's Aadhaar number — Bridge fills in their name, photo, date of birth, and address automatically. What used to take 15 minutes now takes 3.",
+      "Enter a student's phone number and Bridge fills in their name, photo, date of birth, and address automatically using DigiLocker.",
     visual: <AdmissionsVisual />,
   },
   {
     id: "payments",
-    title: "Payments & Payment Links",
+    title: "Payments & Accounting",
     icon: CreditCard,
     description:
-      "Track fees, partial payments, and dues in one place. Send a payment link directly to the student's phone — no cash counting, no manual entries.",
+      "Accept fees during enrollment via cash, QR, or online link. Bridge tracks every transaction, shows outstanding dues across students, and lets you export income reports in one click.",
     visual: <PaymentsVisual />,
   },
   {

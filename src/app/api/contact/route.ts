@@ -10,7 +10,10 @@ export async function POST(request: Request) {
   };
 
   if (!name || !phone) {
-    return Response.json({ error: "Name and phone are required" }, { status: 400 });
+    return Response.json(
+      { error: "Name and phone are required" },
+      { status: 400 },
+    );
   }
 
   const { error } = await resend.emails.send({

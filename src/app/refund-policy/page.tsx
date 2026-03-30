@@ -131,9 +131,7 @@ export default function RefundPolicyPage() {
               <li>
                 WhatsApp messaging costs (per-message charges billed by the BSP)
               </li>
-              <li>
-                Add-on services or one-time setup fees, if applicable
-              </li>
+              <li>Add-on services or one-time setup fees, if applicable</li>
             </ul>
           </section>
 

@@ -29,9 +29,7 @@ export function CtaSection() {
                 you're leaving on the table with your current setup.
               </p>
               <div className="flex gap-3 justify-center flex-wrap">
-                <BookDemoButton variant="muted">
-                  GET STARTED
-                </BookDemoButton>
+                <BookDemoButton variant="muted">GET STARTED</BookDemoButton>
                 <BookDemoButton variant="outline-white">
                   BOOK A DEMO
                 </BookDemoButton>

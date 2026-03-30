@@ -90,8 +90,11 @@ function ContactModal({
             className="fixed inset-0 z-50 flex items-center justify-center p-6"
           >
             <div
+              role="dialog"
+              aria-modal="true"
               className="relative w-full max-w-md border bg-background p-8"
               onClick={(e) => e.stopPropagation()}
+              onKeyDown={(e) => e.stopPropagation()}
             >
               <button
                 type="button"
