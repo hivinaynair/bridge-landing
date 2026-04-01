@@ -179,7 +179,7 @@ function BridgeVerifyStep() {
       <div className="text-base font-bold text-[#111] mb-1">
         Client Identity
       </div>
-      <div className="text-[11px] text-[#666] mb-6 leading-relaxed">
+      <div className="text-xs text-[#666] mb-6 leading-relaxed">
         Verify identity via DigiLocker for instant auto-fill, or enter details
         manually.
       </div>
@@ -270,7 +270,7 @@ function SignInOtpStep() {
             transition={{ duration: 0.2 }}
             className="w-full"
           >
-            <div className="text-[11px] font-semibold text-[#333] text-center mb-3">
+            <div className="text-xs font-semibold text-[#333] text-center mb-3">
               Sign in via <span className="text-[#003580]">DigiLocker</span>
             </div>
 
@@ -424,9 +424,7 @@ function ConsentStep() {
               fill="none"
             />
           </svg>
-          <span className="text-[11px] font-bold text-[#003580]">
-            DigiLocker
-          </span>
+          <span className="text-xs font-bold text-[#003580]">DigiLocker</span>
         </div>
         <div className="w-5 h-5 rounded-full bg-[#4CAF50] flex items-center justify-center">
           <svg
@@ -541,7 +539,7 @@ function ConsentStep() {
       <div className="flex gap-2">
         <button
           type="button"
-          className="flex-1 py-2 rounded-md text-[11px] font-medium border border-[#ccc] text-[#666]"
+          className="flex-1 py-2 rounded-md text-xs font-medium border border-[#ccc] text-[#666]"
         >
           Deny
         </button>
@@ -554,7 +552,7 @@ function ConsentStep() {
               : "none",
           }}
           transition={{ duration: 0.4 }}
-          className="flex-1 py-2 rounded-md text-[11px] font-semibold text-white"
+          className="flex-1 py-2 rounded-md text-xs font-semibold text-white"
           style={{ background: "#1976D2" }}
         >
           Allow
@@ -595,7 +593,7 @@ function FormFilledStep() {
       <div className="text-base font-bold text-[#111] mb-1">
         Client Identity
       </div>
-      <div className="text-[11px] text-[#666] mb-3">
+      <div className="text-xs text-[#666] mb-3">
         Verify identity via DigiLocker for instant auto-fill, or enter details
         manually.
       </div>
@@ -644,7 +642,7 @@ function FormFilledStep() {
             <div className="block text-[8px] font-semibold text-[#888] mb-0.5 uppercase tracking-wider">
               {f.label}
             </div>
-            <div className="border rounded px-2 py-1.5 text-[11px] text-[#1a1a1a] bg-[#fafafa] truncate">
+            <div className="border rounded px-2 py-1.5 text-xs text-[#1a1a1a] bg-[#fafafa] truncate">
               {f.value}
             </div>
           </motion.div>
@@ -806,7 +804,7 @@ function AcctPaymentStep() {
               SUV - Advance (Full Service)
             </div>
           </div>
-          <div className="text-[11px] font-bold text-[#111]">₹20,000</div>
+          <div className="text-xs font-bold text-[#111]">₹20,000</div>
         </div>
 
         {/* Payment Plan */}

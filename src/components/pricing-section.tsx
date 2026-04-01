@@ -92,7 +92,7 @@ export function PricingSection() {
                     Annual
                   </button>
                 </div>
-                <span className="text-[11px] font-semibold text-primary uppercase tracking-[0.05em]">
+                <span className="text-xs font-semibold text-primary uppercase tracking-[0.05em]">
                   Save 12%
                 </span>
               </div>
@@ -162,7 +162,7 @@ export function PricingSection() {
 
               {/* Pro */}
               <div className="border-2 border-primary rounded-lg p-8 lg:p-10 flex flex-col relative">
-                <span className="absolute -top-3 left-6 bg-primary text-primary-foreground text-[11px] font-semibold uppercase tracking-[0.1em] px-3 py-1 rounded-full">
+                <span className="absolute -top-3 left-6 bg-primary text-primary-foreground text-xs font-semibold uppercase tracking-[0.1em] px-3 py-1 rounded-full">
                   Recommended
                 </span>
 
@@ -263,11 +263,11 @@ export function PricingSection() {
             {/* Add-on */}
             <div className="border rounded-lg p-6 max-w-5xl mx-auto mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-muted/50">
               <div>
-                <div className="flex items-center gap-2 mb-1">
+                <div className="flex items-center gap-2 mb-1 flex-nowrap">
                   <p className="text-[14px] font-semibold text-foreground">
                     Your School&apos;s Own WhatsApp Number
                   </p>
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.05em] text-primary border border-primary/30 bg-primary/10 px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] md:text-xs text-nowrap font-semibold uppercase tracking-[0.05em] text-primary border border-primary/30 bg-primary/10 px-2 py-0.5 rounded-full">
                     Pro &amp; above
                   </span>
                 </div>

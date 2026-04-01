@@ -30,8 +30,8 @@ export function Hero() {
                 follow-ups for driving schools across India
               </p>
 
-              <div className="flex flex-wrap gap-3">
-                <BookDemoButton variant="primary" className="group gap-2">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <BookDemoButton variant="primary" className="group gap-2 sm:w-auto w-full justify-center">
                   GET STARTED
                   <PixelArrow
                     size={28}
@@ -40,7 +40,7 @@ export function Hero() {
                     animationClassName="group-hover:animate-arrow-bounce"
                   />
                 </BookDemoButton>
-                <BookDemoButton variant="outline">BOOK A DEMO</BookDemoButton>
+                <BookDemoButton variant="outline" className="sm:w-auto w-full justify-center">BOOK A DEMO</BookDemoButton>
               </div>
             </div>
           </div>

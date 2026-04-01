@@ -54,7 +54,7 @@ import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 type Variant = "primary" | "outline" | "lavender" | "outline-white";
 
 const BASE =
-  "inline-flex items-center text-[11px] font-semibold uppercase tracking-[0.1em] py-2.5 px-[22px] no-underline whitespace-nowrap transition-all duration-150 ease-linear cursor-pointer";
+  "inline-flex items-center text-xs font-semibold uppercase tracking-[0.1em] py-2.5 px-[22px] no-underline whitespace-nowrap transition-all duration-150 ease-linear cursor-pointer";
 
 const VARIANTS: Record<Variant, string> = {
   primary:
@@ -141,7 +141,7 @@ type Props = { className?: string } & HTMLAttributes<HTMLDivElement>;
 export function SectionLabel({ children, className = "", ...rest }: Props) {
   return (
     <div
-      className={`flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.1em] text-muted-foreground${className ? ` ${className}` : ""}`}
+      className={`flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.1em] text-muted-foreground${className ? ` ${className}` : ""}`}
       {...rest}
     >
       <span className="opacity-45">/</span>
@@ -168,7 +168,7 @@ type Props = { className?: string } & HTMLAttributes<HTMLSpanElement>;
 export function TrustBadge({ children, className = "", ...rest }: Props) {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground border  py-1 px-3 bg-background${className ? ` ${className}` : ""}`}
+      className={`inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground border  py-1 px-3 bg-background${className ? ` ${className}` : ""}`}
       {...rest}
     >
       {children}
@@ -195,8 +195,8 @@ type Props = {
 } & HTMLAttributes<HTMLDivElement>;
 
 const STYLES = {
-  in: "bg-white rounded-xl rounded-bl-[2px] py-2 px-3 text-[11px] text-[#111] max-w-[85%] shadow-[0_1px_1px_rgba(0,0,0,0.1)]",
-  out: "bg-[#dcf8c6] rounded-xl rounded-br-[2px] py-2 px-3 text-[11px] text-[#111] max-w-[85%] shadow-[0_1px_1px_rgba(0,0,0,0.1)] self-end",
+  in: "bg-white rounded-xl rounded-bl-[2px] py-2 px-3 text-xs text-[#111] max-w-[85%] shadow-[0_1px_1px_rgba(0,0,0,0.1)]",
+  out: "bg-[#dcf8c6] rounded-xl rounded-br-[2px] py-2 px-3 text-xs text-[#111] max-w-[85%] shadow-[0_1px_1px_rgba(0,0,0,0.1)] self-end",
 };
 
 export function WaBubble({ direction, children, className = "", ...rest }: Props) {
@@ -748,7 +748,7 @@ export function CtaSection() {
           className="py-20 px-12 text-center relative"
           style={{ background: "oklch(0.22 0.045 39)" }}
         >
-          <div className="text-[11px] font-medium uppercase tracking-widest text-white/40 mb-6 flex items-center justify-center gap-2">
+          <div className="text-xs font-medium uppercase tracking-widest text-white/40 mb-6 flex items-center justify-center gap-2">
             <span className="opacity-40">/</span>
             LET'S TALK
           </div>
