@@ -26,8 +26,8 @@ export function Hero() {
 
             <div className="lg:pt-4 lg:mx-auto">
               <p className="text text-muted-foreground mb-8 leading-relaxed max-w-md">
-                Bridge handles admissions, scheduling, payments, and student
-                follow-ups for driving schools across India
+                The only platform your driving school needs — Bridge handles
+                admissions, scheduling, payments, and follow-ups across India
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">

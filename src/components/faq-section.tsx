@@ -32,9 +32,9 @@ export function FaqSection() {
                     <button
                       type="button"
                       onClick={() => setOpenIndex(isOpen ? null : index)}
-                      className="w-full flex items-center justify-between gap-4 py-5 text-left cursor-pointer group"
+                      className="w-full flex items-center justify-between gap-4 py-5 min-h-[48px] text-left cursor-pointer group"
                     >
-                      <span className="text-[15px] font-semibold text-foreground group-hover:text-primary transition-colors">
+                      <span className="text-[15px] sm:text-base font-semibold text-foreground group-hover:text-primary transition-colors">
                         {item.question}
                       </span>
                       <ChevronDown
@@ -50,7 +50,7 @@ export function FaqSection() {
                         isOpen ? "max-h-96 pb-5" : "max-h-0"
                       }`}
                     >
-                      <p className="text-[14px] text-muted-foreground leading-relaxed">
+                      <p className="text-sm sm:text-[15px] text-muted-foreground leading-relaxed">
                         {item.answer}
                       </p>
                     </div>

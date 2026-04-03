@@ -3,7 +3,7 @@ import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 type Variant = "primary" | "outline" | "muted" | "outline-white";
 
 const BASE =
-  "inline-flex items-center text-[14px] font-semibold uppercase tracking-[0.1em] py-3 px-6 no-underline whitespace-nowrap transition-all duration-150 ease-linear cursor-pointer";
+  "inline-flex items-center text-[14px] font-semibold uppercase tracking-[0.1em] py-3 px-6 min-h-[44px] no-underline whitespace-nowrap transition-all duration-150 ease-linear cursor-pointer";
 
 const VARIANTS: Record<Variant, string> = {
   primary: "bg-card-foreground text-white hover:opacity-90",

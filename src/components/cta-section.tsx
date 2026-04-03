@@ -28,10 +28,10 @@ export function CtaSection() {
                 See Bridge in action. We'll show you exactly how much revenue
                 you're leaving on the table with your current setup.
               </p>
-              <div className="flex gap-3 justify-center flex-wrap">
-                <BookDemoButton variant="muted">GET STARTED</BookDemoButton>
-                <BookDemoButton variant="outline-white">
-                  BOOK A DEMO
+              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                <BookDemoButton variant="muted" className="w-full sm:w-56 justify-center">START NOW</BookDemoButton>
+                <BookDemoButton variant="outline-white" className="w-full sm:w-56 justify-center">
+                  SCHEDULE A DEMO
                 </BookDemoButton>
               </div>
             </div>

@@ -48,7 +48,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "How much does Bridge cost?",
     answer:
-      "Bridge starts at ₹2,499/month for the Starter plan, which includes DigiLocker integration, vehicle and staff management, smart scheduling, and payment tracking. The Pro plan at ₹3,999/month adds WhatsApp automation, lead recovery, and the Sarathi Chrome extension. Save 12% with annual billing. Enterprise pricing is custom.",
+      "Bridge starts at ₹2,499/month for the Starter plan, which includes DigiLocker integration, vehicle and staff management, smart scheduling, and payment tracking. The Growth plan at ₹3,999/month adds WhatsApp automation, lead recovery, and the Sarathi Chrome extension. Save 12% with annual billing. Enterprise pricing is custom.",
   },
   {
     question: "Can I manage multiple branches from one account?",

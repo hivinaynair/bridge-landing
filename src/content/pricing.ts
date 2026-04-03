@@ -6,7 +6,7 @@ export type PlanFeature = {
 
 export type Plan = {
   name: string;
-  slug: "starter" | "pro" | "enterprise";
+  slug: "starter" | "growth" | "enterprise";
   monthly: number | null;
   annual: number | null;
   description: string;
@@ -35,8 +35,8 @@ export const plans: Plan[] = [
     ],
   },
   {
-    name: "Pro",
-    slug: "pro",
+    name: "Growth",
+    slug: "growth",
     monthly: 3999,
     annual: 3499,
     recommended: true,
@@ -57,7 +57,7 @@ export const plans: Plan[] = [
     annual: null,
     description: "For multi-branch driving school operations.",
     features: [
-      { text: "Everything in Pro" },
+      { text: "Everything in Growth" },
       { text: "Unlimited branches" },
       { text: "Custom WhatsApp quota" },
       { text: "Custom Aadhaar verification quota" },
@@ -70,7 +70,7 @@ export const plans: Plan[] = [
 
 export const whatsappAddon = {
   name: "Your School's Own WhatsApp Number",
-  tier: "Pro & above",
+  tier: "Growth & above",
   description:
     "Messages come from your school's branded number instead of the shared Bridge number. We handle all setup.",
   monthly: 799,

@@ -88,19 +88,19 @@ export function Navbar() {
   });
 
   return (
-    <div className="fixed top-0 z-50 w-full px-3 transition-all duration-300 lg:px-6">
+    <div className="fixed top-0 z-50 w-full px-3 lg:px-6">
       <div
-        className={`transition-all duration-300 ${scrolled ? "pt-2 lg:pt-3" : ""}`}
+        className={`transition-[padding] duration-300 ${scrolled ? "pt-2 lg:pt-3" : ""}`}
       >
         <nav
-          className={`mx-auto transition-all duration-300 ${
+          className={`mx-auto transition-[max-width,background-color,border-color,box-shadow,backdrop-filter,padding] duration-300 ${
             scrolled
               ? "max-w-[1440px] border border-foreground/10 bg-background/70 shadow-lg shadow-foreground/5 backdrop-blur-xl"
               : "max-w-[1600px] bg-transparent lg:px-14"
           }`}
         >
           <div
-            className={`flex items-center justify-between transition-all duration-300 h-[72px] ${
+            className={`flex items-center justify-between transition-[padding] duration-300 h-[72px] ${
               scrolled ? "px-4 lg:px-10" : "px-4 lg:px-6"
             }`}
           >

@@ -110,7 +110,7 @@ export function CapabilitiesCards() {
                   </p>
                 </div>
                 <div className="lg:text-right lg:pr-4">
-                  <DisplayHeadline className="text-3xl lg:text-4xl text-foreground">
+                  <DisplayHeadline as="p" className="text-3xl lg:text-4xl text-foreground">
                     {cap.stat}
                   </DisplayHeadline>
                   <p className="text-sm text-muted-foreground mt-1">

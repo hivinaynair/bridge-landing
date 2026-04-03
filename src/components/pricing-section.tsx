@@ -7,7 +7,7 @@ import { plans, whatsappAddon } from "@/content/pricing";
 import { BookDemoButton } from "./contact-modal";
 import { BorderEdges, DisplayHeadline, SectionLabel } from "./ui";
 
-const [starter, pro, enterprise] = plans;
+const [starter, growth, enterprise] = plans;
 
 export function PricingSection() {
   const [billing, setBilling] = useState<"monthly" | "annual">("monthly");
@@ -18,8 +18,8 @@ export function PricingSection() {
   const starterPrice = formatPrice(
     billing === "monthly" ? starter.monthly : starter.annual,
   );
-  const proPrice = formatPrice(
-    billing === "monthly" ? pro.monthly : pro.annual,
+  const growthPrice = formatPrice(
+    billing === "monthly" ? growth.monthly : growth.annual,
   );
 
   return (
@@ -122,7 +122,7 @@ export function PricingSection() {
                           />
                         )}
                         <span
-                          className={`text-[13px] leading-snug ${f.included ? "text-foreground" : "text-muted-foreground/90"}`}
+                          className={`text-sm leading-snug ${f.included ? "text-foreground" : "text-muted-foreground/90"}`}
                         >
                           {f.text}
                         </span>
@@ -135,25 +135,25 @@ export function PricingSection() {
                   variant="outline"
                   className="justify-center w-full"
                 >
-                  GET STARTED
+                  START FREE
                 </BookDemoButton>
               </div>
 
-              {/* Pro */}
+              {/* Growth */}
               <div className="border-2 border-primary rounded-lg p-8 lg:p-10 flex flex-col relative">
                 <span className="absolute -top-3 left-6 bg-primary text-primary-foreground text-xs font-semibold uppercase tracking-[0.1em] px-3 py-1 rounded-full">
                   Recommended
                 </span>
 
                 <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-                  {pro.name}
+                  {growth.name}
                 </p>
                 <div className="mt-5 mb-2">
                   <DisplayHeadline
                     as="p"
                     className="text-[clamp(36px,4vw,48px)] inline"
                   >
-                    {proPrice}
+                    {growthPrice}
                   </DisplayHeadline>
                   <span className="text-muted-foreground text-[14px] ml-1">
                     /month
@@ -165,12 +165,12 @@ export function PricingSection() {
                   </p>
                 )}
                 <p className="text-muted-foreground text-[14px] leading-relaxed mb-8 mt-2">
-                  {pro.description}
+                  {growth.description}
                 </p>
 
                 <div className="border-t pt-6 mb-8 flex-1">
                   <ul className="space-y-3">
-                    {pro.features.map((f) => (
+                    {growth.features.map((f) => (
                       <li key={f.text} className="flex items-start gap-2.5">
                         <Check
                           size={16}
@@ -178,7 +178,7 @@ export function PricingSection() {
                           className={`mt-0.5 shrink-0 ${f.highlighted ? "text-primary" : "text-foreground"}`}
                         />
                         <span
-                          className={`text-[13px] leading-snug ${f.highlighted ? "text-primary font-medium" : "text-foreground"}`}
+                          className={`text-sm leading-snug ${f.highlighted ? "text-primary font-medium" : "text-foreground"}`}
                         >
                           {f.text}
                         </span>
@@ -191,7 +191,7 @@ export function PricingSection() {
                   variant="primary"
                   className="justify-center w-full"
                 >
-                  GET STARTED
+                  CHOOSE GROWTH
                 </BookDemoButton>
               </div>
 
@@ -262,7 +262,7 @@ export function PricingSection() {
             </div>
 
             {/* MDR Note */}
-            <p className="text-center text-muted-foreground text-[13px] mt-8 leading-relaxed">
+            <p className="text-center text-muted-foreground text-sm mt-8 leading-relaxed">
               Payment gateway MDR:{" "}
               <span className="text-foreground font-medium">2% + GST</span> per
               transaction &nbsp;·&nbsp; Unlimited students &nbsp;·&nbsp; Cancel
