@@ -44,6 +44,7 @@ function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
               type="button"
               onClick={onClose}
               className="absolute top-6 right-6 text-muted-foreground hover:text-foreground"
+              aria-label="Close menu"
             >
               <X size={24} />
             </button>
@@ -106,7 +107,7 @@ export function Navbar() {
           >
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/arch.svg" alt="Bridge" width={32} height={32} />
+              <Image src="/arch.svg" alt="" width={32} height={32} priority />
               <span className="font-sans text-2xl font-semibold tracking-tighter text-card-foreground">
                 Bridge
               </span>
@@ -140,6 +141,7 @@ export function Navbar() {
               type="button"
               onClick={() => setMenuOpen(true)}
               className="lg:hidden text-foreground"
+              aria-label="Open menu"
             >
               <Menu size={24} />
             </button>

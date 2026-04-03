@@ -12,6 +12,8 @@ const dmSerifDisplay = DM_Serif_Display({
   variable: "--font-dm-serif",
   subsets: ["latin"],
   weight: "400",
+  display: "swap",
+  preload: true,
 });
 
 const robotoMono = Roboto_Mono({
