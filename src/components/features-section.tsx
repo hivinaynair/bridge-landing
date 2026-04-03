@@ -132,9 +132,12 @@ function FeatureAccordionItem({
             transition={{ duration: 0.25 }}
             className={`lg:hidden overflow-hidden bg-foreground/5 ${!isLast ? "border-b border-foreground/10" : ""}`}
           >
-            <div className="flex items-center justify-center py-4 overflow-hidden px-4">
-              <div className="w-full max-w-full overflow-hidden [&>*]:mx-auto" style={{ zoom: 0.55 }}>
-                {feature.visual}
+            <div
+              className="relative w-full overflow-hidden"
+              style={{ height: 280 }}
+            >
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div style={{ zoom: 0.55 }}>{feature.visual}</div>
               </div>
             </div>
           </motion.div>
