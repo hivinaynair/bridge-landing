@@ -11,10 +11,12 @@ import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import {
   AdmissionsVisual,
+  AdmissionsVisualMobile,
   LeadsVisual,
   PaymentsVisual,
   PaymentsVisualMobile,
   SchedulingVisual,
+  SchedulingVisualMobile,
 } from "./feature-visuals";
 import { BorderEdges } from "./ui";
 
@@ -35,6 +37,7 @@ const features: Feature[] = [
     description:
       "Enter a student's phone number and Bridge fills in their name, photo, date of birth, and address automatically using DigiLocker.",
     visual: <AdmissionsVisual />,
+    mobileVisual: <AdmissionsVisualMobile />,
   },
   {
     id: "payments",
@@ -52,6 +55,7 @@ const features: Feature[] = [
     description:
       "Pick a vehicle, see open slots, assign a student. Bridge prevents double-bookings and gives each student their full schedule on day one.",
     visual: <SchedulingVisual />,
+    mobileVisual: <SchedulingVisualMobile />,
   },
   {
     id: "leads",

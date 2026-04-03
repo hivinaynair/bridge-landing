@@ -696,6 +696,129 @@ export function AdmissionsVisual() {
   );
 }
 
+export function AdmissionsVisualMobile() {
+  const [step, setStep] = useState(0);
+
+  const advance = useCallback(() => {
+    setStep((s) => (s + 1) % 4);
+  }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(advance, STEP_DURATIONS[step]);
+    return () => clearTimeout(timeout);
+  }, [step, advance]);
+
+  return (
+    <div className="w-full max-w-[300px] mx-auto">
+      <AppChrome
+        path={
+          step === 1 || step === 2
+            ? "digilocker.meripehchaan.gov.in"
+            : "clients/new"
+        }
+        footer={<StepDots active={step} count={4} />}
+      >
+        <div className="p-4 bg-white overflow-hidden" style={{ height: 360 }}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={step}
+              variants={stepVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className="h-full"
+            >
+              {step === 0 && <BridgeVerifyStep />}
+              {step === 1 && <SignInOtpStep />}
+              {step === 2 && <ConsentStep />}
+              {step === 3 && <FormFilledStepMobile />}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </AppChrome>
+    </div>
+  );
+}
+
+function FormFilledStepMobile() {
+  const [visibleCount, setVisibleCount] = useState(0);
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i < FORM_FIELDS.length) {
+        i++;
+        setVisibleCount(i);
+      } else {
+        clearInterval(interval);
+      }
+    }, 220);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="flex flex-col">
+      <div className="mb-1 text-[10px] text-[#888]">Step 3 of 5</div>
+      <div className="w-full h-1 rounded-full bg-[#f0f0f0] mb-4">
+        <div
+          className="h-full rounded-full"
+          style={{ width: "60%", background: "var(--primary)" }}
+        />
+      </div>
+      <div className="text-base font-bold text-[#111] mb-1">
+        Client Identity
+      </div>
+      <div className="text-xs text-[#666] mb-3">
+        Verified via DigiLocker — auto-filled.
+      </div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+        className="flex items-center justify-center gap-1.5 mb-3"
+      >
+        <span className="text-[9px] font-semibold text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+          <svg
+            aria-hidden="true"
+            width="10"
+            height="10"
+            viewBox="0 0 12 12"
+            fill="none"
+          >
+            <path
+              d="M2.5 6l2.5 2.5 4.5-5"
+              stroke="#15803d"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          Verified via DigiLocker
+        </span>
+      </motion.div>
+      <div className="flex flex-col gap-1.5">
+        {FORM_FIELDS.map((f, i) => (
+          <motion.div
+            key={f.label}
+            initial={{ opacity: 0, y: 6 }}
+            animate={
+              i < visibleCount ? { opacity: 1, y: 0 } : { opacity: 0, y: 6 }
+            }
+            transition={{ duration: 0.2 }}
+          >
+            <div className="block text-[8px] font-semibold text-[#888] mb-0.5 uppercase tracking-wider">
+              {f.label}
+            </div>
+            <div className="border rounded px-2 py-1.5 text-xs text-[#1a1a1a] bg-[#fafafa] truncate">
+              {f.value}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── Accounting ──────────────────────────────────────────────────────────────
 
 const ACCT_STEP_DURATIONS = [4000, 4500];
@@ -1700,6 +1823,142 @@ export function SchedulingVisual() {
           </div>
         </div>
       </AppChrome>
+    </div>
+  );
+}
+
+export function SchedulingVisualMobile() {
+  const [step, setStep] = useState(0);
+
+  const advance = useCallback(() => {
+    setStep((s) => (s + 1) % 2);
+  }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(advance, SCHED_STEP_DURATIONS[step]);
+    return () => clearTimeout(timeout);
+  }, [step, advance]);
+
+  return (
+    <div className="w-full max-w-[300px] mx-auto">
+      <AppChrome
+        path={step === 0 ? "clients/new" : "schedule"}
+        footer={<StepDots active={step} count={2} />}
+      >
+        <div
+          className="p-3 bg-white overflow-hidden"
+          style={{ height: 340 }}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={step}
+              variants={stepVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className="h-full"
+            >
+              {step === 0 && <SchedPickerStep />}
+              {step === 1 && <SchedCalendarStepMobile />}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </AppChrome>
+    </div>
+  );
+}
+
+function SchedCalendarStepMobile() {
+  const days = ["MON", "TUE", "WED", "THU", "FRI"];
+  const slots = ["9 AM", "11 AM", "1 PM", "3 PM", "5 PM"];
+  const bookings: Record<string, string> = {
+    "MON-9 AM": "Ravi K.",
+    "MON-11 AM": "Priya M.",
+    "TUE-9 AM": "Arun S.",
+    "TUE-1 PM": "Meera P.",
+    "WED-11 AM": "Suresh R.",
+    "WED-3 PM": "Lakshmi T.",
+    "THU-9 AM": "Deepak N.",
+    "FRI-11 AM": "Kavya B.",
+    "FRI-3 PM": "Vikram J.",
+  };
+
+  return (
+    <div className="flex flex-col h-full">
+      <div className="flex items-center justify-between mb-3">
+        <div>
+          <div className="text-xs font-semibold text-[#111]">Swift Dzire</div>
+          <div className="text-[9px] text-[#888]">KA-01-AB-1234</div>
+        </div>
+        <div className="flex items-center gap-1 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">
+          <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
+          <span className="text-[8px] font-semibold text-green-700">
+            0 conflicts
+          </span>
+        </div>
+      </div>
+      <table className="border-collapse w-full" style={{ fontSize: 9 }}>
+        <thead>
+          <tr>
+            <th className="w-8 pb-1.5" />
+            {days.map((d) => (
+              <th
+                key={d}
+                className="pb-1.5 text-center font-semibold uppercase tracking-wider"
+                style={{ color: "#aaa" }}
+              >
+                {d}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {slots.map((slot) => (
+            <tr key={slot}>
+              <td
+                className="pr-1 whitespace-nowrap text-right"
+                style={{ color: "#aaa", paddingBottom: 4 }}
+              >
+                {slot}
+              </td>
+              {days.map((day) => {
+                const key = `${day}-${slot}`;
+                const name = bookings[key];
+                return (
+                  <td key={key} className="text-center" style={{ paddingBottom: 4, paddingLeft: 1, paddingRight: 1 }}>
+                    {name ? (
+                      <div
+                        className="rounded px-0.5 py-1 font-semibold leading-none truncate"
+                        style={{
+                          background: "var(--primary)",
+                          color: "var(--primary-foreground)",
+                        }}
+                      >
+                        {name}
+                      </div>
+                    ) : (
+                      <div
+                        className="rounded border border-dashed py-1 leading-none"
+                        style={{ color: "#ddd", borderColor: "#e5e5e5" }}
+                      >
+                        —
+                      </div>
+                    )}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div className="mt-auto pt-2 border-t flex items-center justify-between">
+        <div className="text-[9px] text-[#aaa]">
+          Instructor Vijay · 10 sessions
+        </div>
+        <div className="text-[9px] font-semibold text-primary">
+          Auto-assigned ✓
+        </div>
+      </div>
     </div>
   );
 }
