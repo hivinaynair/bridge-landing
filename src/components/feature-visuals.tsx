@@ -1134,6 +1134,244 @@ export function PaymentsVisual() {
   );
 }
 
+export function PaymentsVisualMobile() {
+  const [step, setStep] = useState(0);
+
+  const advance = useCallback(() => {
+    setStep((s) => (s + 1) % 2);
+  }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(advance, ACCT_STEP_DURATIONS[step]);
+    return () => clearTimeout(timeout);
+  }, [step, advance]);
+
+  return (
+    <div className="w-full max-w-[300px] mx-auto">
+      <AppChrome
+        path={step === 0 ? "clients/new" : "income"}
+        footer={<StepDots active={step} count={2} />}
+      >
+        <div
+          className="p-3 bg-white overflow-hidden"
+          style={{ height: 320 }}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={step}
+              variants={stepVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className="h-full"
+            >
+              {step === 0 && <AcctPaymentStepMobile />}
+              {step === 1 && <AcctDashboardStepMobile />}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </AppChrome>
+    </div>
+  );
+}
+
+function AcctPaymentStepMobile() {
+  const [showBtn, setShowBtn] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  useEffect(() => {
+    const t1 = setTimeout(() => setShowBtn(true), 500);
+    const t2 = setTimeout(() => setShowSuccess(true), 2800);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, []);
+
+  return (
+    <div className="flex flex-col h-full">
+      <div className="mb-1 text-[10px] text-[#888]">Step 6 of 6</div>
+      <div className="w-full h-1 rounded-full bg-[#f0f0f0] mb-2">
+        <div
+          className="h-full rounded-full"
+          style={{ width: "100%", background: "var(--primary)" }}
+        />
+      </div>
+      <div className="text-sm font-bold text-[#111] mb-0.5">Payment</div>
+      <div className="text-[9px] text-[#888] mb-2">
+        Record the payment for this enrollment.
+      </div>
+      <div className="border rounded-lg p-2 flex items-center justify-between mb-2">
+        <div>
+          <div className="text-[8px] text-[#888]">Package</div>
+          <div className="text-[10px] font-semibold text-[#111]">
+            SUV - Advance (Full Service)
+          </div>
+        </div>
+        <div className="text-xs font-bold text-[#111]">₹20,000</div>
+      </div>
+      <div className="text-[9px] font-medium text-[#333] mb-1">
+        Payment Plan
+      </div>
+      <div className="flex gap-2 mb-2">
+        <div
+          className="flex-1 border-2 rounded-lg p-2"
+          style={{ borderColor: "var(--primary)" }}
+        >
+          <div className="text-[9px] font-semibold text-[#111]">
+            Full Payment
+          </div>
+          <div className="text-[8px] text-[#888]">Pay the entire fee now</div>
+        </div>
+        <div className="flex-1 border rounded-lg p-2">
+          <div className="text-[9px] font-semibold text-[#111]">
+            2 Installments
+          </div>
+          <div className="text-[8px] text-[#888]">Pay half now, rest later</div>
+        </div>
+      </div>
+      <div className="text-[9px] font-medium text-[#333] mb-1">
+        Payment Method
+      </div>
+      <div className="flex gap-1.5 mb-2">
+        {["Online", "QR", "Cash"].map((m, i) => (
+          <div
+            key={m}
+            className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[9px] font-medium"
+            style={{
+              background: i === 2 ? "var(--primary)" : "transparent",
+              color: i === 2 ? "var(--primary-foreground)" : "#888",
+              border: i === 2 ? "none" : "1px solid #e5e5e5",
+            }}
+          >
+            {m}
+          </div>
+        ))}
+      </div>
+      <div className="mt-auto flex items-center justify-between">
+        <div className="text-[9px] text-[#888]">← Back</div>
+        <AnimatePresence mode="wait">
+          {showSuccess ? (
+            <motion.div
+              key="done"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="flex items-center gap-1.5 bg-green-50 border border-green-200 px-3 py-1.5 rounded-lg"
+            >
+              <span className="text-[9px] font-semibold text-green-700">
+                Admission Complete
+              </span>
+            </motion.div>
+          ) : (
+            <motion.button
+              key="cta"
+              type="button"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: showBtn ? 1 : 0 }}
+              exit={{ opacity: 0 }}
+              className="px-4 py-1.5 rounded-lg text-[9px] font-semibold text-white"
+              style={{ background: "var(--primary)" }}
+            >
+              Complete Admission →
+            </motion.button>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
+
+function AcctDashboardStepMobile() {
+  const [cardsVisible, setCardsVisible] = useState(0);
+  const [rowsVisible, setRowsVisible] = useState(0);
+
+  useEffect(() => {
+    let i = 0;
+    const cardInterval = setInterval(() => {
+      if (i < 3) {
+        i++;
+        setCardsVisible(i);
+      } else {
+        clearInterval(cardInterval);
+        let j = 0;
+        const rowInterval = setInterval(() => {
+          if (j < ACCT_ROWS.length) {
+            j++;
+            setRowsVisible(j);
+          } else {
+            clearInterval(rowInterval);
+          }
+        }, 180);
+      }
+    }, 150);
+    return () => clearInterval(cardInterval);
+  }, []);
+
+  return (
+    <div className="flex flex-col gap-2">
+      <div>
+        <div className="text-sm font-bold text-[#111]">Income</div>
+        <div className="text-[8px] text-[#888]">Mar 01 – Mar 31, 2026</div>
+      </div>
+      <div className="grid grid-cols-3 gap-1.5">
+        {ACCT_SUMMARY.slice(0, 3).map((card, i) => (
+          <motion.div
+            key={card.label}
+            initial={{ opacity: 0, y: 6 }}
+            animate={
+              i < cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 6 }
+            }
+            transition={{ duration: 0.2 }}
+            className="border rounded-lg p-1.5"
+          >
+            <div className="text-[6px] font-medium text-[#888] uppercase tracking-wider mb-0.5">
+              {card.icon} {card.label}
+            </div>
+            <div className="text-[10px] font-bold text-[#111]">
+              {card.value}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+      <div className="rounded-lg border overflow-hidden">
+        <div
+          className="grid bg-[#f9f9f9] border-b px-2 py-1"
+          style={{ gridTemplateColumns: "1fr 42px 48px" }}
+        >
+          {["Client", "Method", "Amount"].map((h) => (
+            <div
+              key={h}
+              className="text-[7px] font-semibold uppercase tracking-wider text-[#aaa]"
+            >
+              {h}
+            </div>
+          ))}
+        </div>
+        {ACCT_ROWS.slice(0, 5).map((r, i) => (
+          <motion.div
+            key={r.client}
+            initial={{ opacity: 0, x: -6 }}
+            animate={
+              i < rowsVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -6 }
+            }
+            transition={{ duration: 0.2 }}
+            className="grid px-2 py-1.5 border-b last:border-0 text-[8px] items-center"
+            style={{ gridTemplateColumns: "1fr 42px 48px" }}
+          >
+            <span className="font-medium text-[#111] truncate">
+              {r.client}
+            </span>
+            <span className="text-[#888]">{r.method}</span>
+            <span className="font-semibold text-[#111] text-right">
+              {r.amount}
+            </span>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── Scheduling ───────────────────────────────────────────────────────────────
 
 const SCHED_STEP_DURATIONS = [4000, 4000];

@@ -13,6 +13,7 @@ import {
   AdmissionsVisual,
   LeadsVisual,
   PaymentsVisual,
+  PaymentsVisualMobile,
   SchedulingVisual,
 } from "./feature-visuals";
 import { BorderEdges } from "./ui";
@@ -23,6 +24,7 @@ interface Feature {
   icon: LucideIcon;
   description: string;
   visual: React.ReactNode;
+  mobileVisual?: React.ReactNode;
 }
 
 const features: Feature[] = [
@@ -41,6 +43,7 @@ const features: Feature[] = [
     description:
       "Accept fees during enrollment via cash, QR, or online link. Bridge tracks every transaction, shows outstanding dues across students, and lets you export income reports in one click.",
     visual: <PaymentsVisual />,
+    mobileVisual: <PaymentsVisualMobile />,
   },
   {
     id: "scheduling",
@@ -57,6 +60,7 @@ const features: Feature[] = [
     description:
       "When someone calls asking about prices, Bridge sends them a WhatsApp message automatically. If they don't enroll in 48 hours, a follow-up goes out — so you never lose an enquiry.",
     visual: <LeadsVisual />,
+    mobileVisual: <LeadsVisual />,
   },
 ];
 
@@ -132,13 +136,10 @@ function FeatureAccordionItem({
             transition={{ duration: 0.25 }}
             className={`lg:hidden overflow-hidden bg-foreground/5 ${!isLast ? "border-b border-foreground/10" : ""}`}
           >
-            <div
-              className="relative w-full overflow-hidden"
-              style={{ height: 280 }}
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
+            <div className="flex items-center justify-center py-4 px-4">
+              {feature.mobileVisual ?? (
                 <div style={{ zoom: 0.55 }}>{feature.visual}</div>
-              </div>
+              )}
             </div>
           </motion.div>
         )}
