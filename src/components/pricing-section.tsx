@@ -3,45 +3,24 @@
 import { Check, Minus } from "lucide-react";
 import { useState } from "react";
 
+import { plans, whatsappAddon } from "@/content/pricing";
 import { BookDemoButton } from "./contact-modal";
 import { BorderEdges, DisplayHeadline, SectionLabel } from "./ui";
 
-const starterFeatures = [
-  { text: "DigiLocker integration", included: true },
-  { text: "Vehicle & Staff management", included: true },
-  { text: "Smart scheduling", included: true },
-  { text: "Payment tracking (UPI + Cash)", included: true },
-  { text: "Staff verification (Aadhaar + DL)", included: true },
-  { text: "WhatsApp notifications", included: false },
-  { text: "Lead recovery pipeline", included: false },
-  { text: "Alumni campaigns", included: false },
-  { text: "Marketing hub", included: false },
-  { text: "Promotional campaigns", included: false },
-];
-
-const enterpriseFeatures = [
-  { text: "Everything in Pro" },
-  { text: "Unlimited branches" },
-  { text: "Custom WhatsApp quota" },
-  { text: "Custom Aadhaar verification quota" },
-  { text: "Your school's own WhatsApp number" },
-  { text: "Dedicated onboarding" },
-  { text: "Priority support" },
-];
-
-const proFeatures = [
-  { text: "Everything in Starter", highlighted: false },
-  { text: "Sarathi auto-fill Chrome plugin", highlighted: true },
-  { text: "1,500 WhatsApp messages/month", highlighted: true },
-  { text: "Lead recovery pipeline", highlighted: true },
-  { text: "Promotional campaigns", highlighted: true },
-];
+const [starter, pro, enterprise] = plans;
 
 export function PricingSection() {
   const [billing, setBilling] = useState<"monthly" | "annual">("monthly");
 
-  const starterPrice = billing === "monthly" ? "₹2,499" : "₹1,999";
-  const proPrice = billing === "monthly" ? "₹3,999" : "₹3,499";
+  const formatPrice = (price: number | null) =>
+    price !== null ? `₹${price.toLocaleString("en-IN")}` : "Custom";
+
+  const starterPrice = formatPrice(
+    billing === "monthly" ? starter.monthly : starter.annual,
+  );
+  const proPrice = formatPrice(
+    billing === "monthly" ? pro.monthly : pro.annual,
+  );
 
   return (
     <div id="pricing" className="border-y">
@@ -103,7 +82,7 @@ export function PricingSection() {
               {/* Starter */}
               <div className="border rounded-lg p-8 lg:p-10 flex flex-col">
                 <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-                  Starter
+                  {starter.name}
                 </p>
                 <div className="mt-5 mb-2">
                   <DisplayHeadline
@@ -122,12 +101,12 @@ export function PricingSection() {
                   </p>
                 )}
                 <p className="text-muted-foreground text-[14px] leading-relaxed mb-8 mt-2">
-                  Everything you need to run your driving school digitally.
+                  {starter.description}
                 </p>
 
                 <div className="border-t pt-6 mb-8 flex-1">
                   <ul className="space-y-3">
-                    {starterFeatures.map((f) => (
+                    {starter.features.map((f) => (
                       <li key={f.text} className="flex items-start gap-2.5">
                         {f.included ? (
                           <Check
@@ -143,7 +122,7 @@ export function PricingSection() {
                           />
                         )}
                         <span
-                          className={`text-[13px] leading-snug ${f.included ? "text-foreground" : "text-border"}`}
+                          className={`text-[13px] leading-snug ${f.included ? "text-foreground" : "text-muted-foreground/90"}`}
                         >
                           {f.text}
                         </span>
@@ -167,7 +146,7 @@ export function PricingSection() {
                 </span>
 
                 <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-                  Pro
+                  {pro.name}
                 </p>
                 <div className="mt-5 mb-2">
                   <DisplayHeadline
@@ -186,13 +165,12 @@ export function PricingSection() {
                   </p>
                 )}
                 <p className="text-muted-foreground text-[14px] leading-relaxed mb-8 mt-2">
-                  Everything in Starter, plus WhatsApp automation, lead recovery
-                  &amp; alumni campaigns.
+                  {pro.description}
                 </p>
 
                 <div className="border-t pt-6 mb-8 flex-1">
                   <ul className="space-y-3">
-                    {proFeatures.map((f) => (
+                    {pro.features.map((f) => (
                       <li key={f.text} className="flex items-start gap-2.5">
                         <Check
                           size={16}
@@ -220,7 +198,7 @@ export function PricingSection() {
               {/* Enterprise */}
               <div className="border rounded-lg p-8 lg:p-10 flex flex-col">
                 <p className="text-[13px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-                  Enterprise
+                  {enterprise.name}
                 </p>
                 <div className="mt-5 mb-2">
                   <DisplayHeadline
@@ -231,12 +209,12 @@ export function PricingSection() {
                   </DisplayHeadline>
                 </div>
                 <p className="text-muted-foreground text-[14px] leading-relaxed mb-8">
-                  For multi-branch driving school operations.
+                  {enterprise.description}
                 </p>
 
                 <div className="border-t pt-6 mb-8 flex-1">
                   <ul className="space-y-3">
-                    {enterpriseFeatures.map((f) => (
+                    {enterprise.features.map((f) => (
                       <li key={f.text} className="flex items-start gap-2.5">
                         <Check
                           size={16}
@@ -265,19 +243,18 @@ export function PricingSection() {
               <div>
                 <div className="flex items-center gap-2 mb-1 flex-nowrap">
                   <p className="text-[14px] font-semibold text-foreground">
-                    Your School&apos;s Own WhatsApp Number
+                    {whatsappAddon.name}
                   </p>
                   <span className="text-[10px] md:text-xs text-nowrap font-semibold uppercase tracking-[0.05em] text-primary border border-primary/30 bg-primary/10 px-2 py-0.5 rounded-full">
-                    Pro &amp; above
+                    {whatsappAddon.tier}
                   </span>
                 </div>
                 <p className="text-muted-foreground text-[13px] leading-relaxed max-w-lg">
-                  Messages come from your school&apos;s branded number instead
-                  of the shared Bridge number. We handle all setup.
+                  {whatsappAddon.description}
                 </p>
               </div>
               <p className="text-foreground font-semibold text-[15px] shrink-0">
-                +₹799
+                +₹{whatsappAddon.monthly}
                 <span className="text-muted-foreground text-[13px] font-normal">
                   /month
                 </span>

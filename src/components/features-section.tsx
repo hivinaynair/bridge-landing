@@ -133,9 +133,7 @@ function FeatureAccordionItem({
             className={`lg:hidden overflow-hidden bg-foreground/5 ${!isLast ? "border-b border-foreground/10" : ""}`}
           >
             <div className="flex items-center justify-center py-4 overflow-hidden">
-              <div style={{ zoom: 0.55 }}>
-                {feature.visual}
-              </div>
+              <div style={{ zoom: 0.55 }}>{feature.visual}</div>
             </div>
           </motion.div>
         )}

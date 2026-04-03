@@ -20,7 +20,7 @@ export function Hero() {
                 as="h1"
                 className="m-0 text-[clamp(32px,5vw,60px)] lg:mb-6"
               >
-                Everything Your <br /> Driving School Needs. <br /> In One App.
+                The Only Software <br /> Your Driving School <br /> Needs.
               </DisplayHeadline>
             </div>
 
@@ -31,7 +31,10 @@ export function Hero() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <BookDemoButton variant="primary" className="group gap-2 sm:w-auto w-full justify-center">
+                <BookDemoButton
+                  variant="primary"
+                  className="group gap-2 sm:w-auto w-full justify-center"
+                >
                   GET STARTED
                   <PixelArrow
                     size={28}
@@ -40,7 +43,12 @@ export function Hero() {
                     animationClassName="group-hover:animate-arrow-bounce"
                   />
                 </BookDemoButton>
-                <BookDemoButton variant="outline" className="sm:w-auto w-full justify-center">BOOK A DEMO</BookDemoButton>
+                <BookDemoButton
+                  variant="outline"
+                  className="sm:w-auto w-full justify-center"
+                >
+                  BOOK A DEMO
+                </BookDemoButton>
               </div>
             </div>
           </div>

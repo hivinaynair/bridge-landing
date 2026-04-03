@@ -1,5 +1,3 @@
-"use client";
-
 import {
   CapabilitiesCards,
   CapabilitiesHeading,
@@ -11,15 +9,16 @@ import {
   PricingSection,
   ProductSection,
 } from "@/components";
-// import { HeroVideo } from "@/components/hero-video";
+import { FaqSection } from "@/components/faq-section";
+import { JsonLd } from "@/components/json-ld";
 import { SecuritySection } from "@/components/security-section";
 
 export default function Page() {
   return (
     <main className="pt-[72px]">
+      <JsonLd />
       <Navbar />
       <Hero />
-      {/* <HeroVideo /> */}
       <ProductSection />
       <FeaturesSection />
       <SecuritySection />
@@ -27,6 +26,7 @@ export default function Page() {
       <CapabilitiesHeading />
       <CapabilitiesCards />
       <PricingSection />
+      <FaqSection />
       <CtaSection />
 
       <Footer />

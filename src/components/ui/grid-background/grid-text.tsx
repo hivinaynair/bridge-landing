@@ -93,6 +93,7 @@ export function GridText({
 
       const bw = Math.round(w * dpr);
       const bh = Math.round(h * dpr);
+      if (bw === 0 || bh === 0) return;
       const cols = Math.floor(w / cellSize);
       const rows = Math.floor(h / cellSize);
       // Build text mask on offscreen canvas

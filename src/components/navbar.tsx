@@ -16,6 +16,7 @@ const NAV_LINKS = [
   { href: "/#product", label: "Product" },
   { href: "/#capabilities", label: "Features" },
   { href: "/#pricing", label: "Pricing" },
+  { href: "/blog", label: "Blog" },
 ] as const;
 
 function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {

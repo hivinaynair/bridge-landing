@@ -20,9 +20,28 @@ const robotoMono = Roboto_Mono({
   weight: ["300", "400", "500", "600"],
 });
 export const metadata: Metadata = {
-  title: "Bridge — Smart Software for Indian Driving Schools",
+  title: "Bridge — Driving School Software for Indian Motor Training Schools",
   description:
-    "Replace your legacy driving school software. 3-minute admissions with Aadhaar KYC, WhatsApp lead recovery, automated upsells, and Sarathi auto-fill.",
+    "Driving school management software built for India. Aadhaar KYC admissions, WhatsApp lead recovery, Sarathi auto-fill, fleet tracking. Start free.",
+  metadataBase: new URL("https://bridgedrive.in"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Bridge — Driving School Software for Indian Motor Training Schools",
+    description:
+      "Driving school management software built for India. Aadhaar KYC admissions, WhatsApp lead recovery, Sarathi auto-fill, fleet tracking.",
+    url: "https://bridgedrive.in",
+    siteName: "Bridge",
+    type: "website",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary",
+    title: "Bridge — Driving School Software for Indian Motor Training Schools",
+    description:
+      "Driving school management software built for India. Aadhaar KYC admissions, WhatsApp lead recovery, Sarathi auto-fill, fleet tracking.",
+  },
 };
 
 export default function RootLayout({

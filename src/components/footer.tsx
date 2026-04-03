@@ -5,6 +5,7 @@ import { GridText } from "@/components/ui/grid-background/grid-text";
 const LEFT_LINKS = [
   { label: "Features", href: "/#product" },
   { label: "Pricing", href: "/#pricing" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "mailto:hello@bridgedriving.in" },
 ];
 
