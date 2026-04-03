@@ -20,14 +20,15 @@ export function Hero() {
                 as="h1"
                 className="m-0 text-[clamp(32px,5vw,60px)] lg:mb-6"
               >
-                The Only Software <br /> Your Driving School <br /> Needs.
+                The Only Software <br /> Your Driving School <br />
+                Needs.
               </DisplayHeadline>
             </div>
 
-            <div className="lg:pt-4 lg:mx-auto">
-              <p className="text text-muted-foreground mb-8 leading-relaxed max-w-md">
-                The only platform your driving school needs — Bridge handles
-                admissions, scheduling, payments, and follow-ups across India
+            <div className="lg:pt-8 pt-2 lg:mx-auto">
+              <p className="text text-muted-foreground mb-6 leading-relaxed max-w-md">
+                Everything to run and grow your driving school:
+                admissions, scheduling, payments, and follow-ups.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
