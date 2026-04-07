@@ -47,6 +47,13 @@ export const metadata: Metadata = {
   },
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Bridge - Driving School Software",
+  url: "https://bridgedrive.in",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -55,7 +62,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleTagManager gtmId="GTM-WTX2V8T9" />
-
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       <body
         className={`${dmSans.variable} ${dmSerifDisplay.variable} ${robotoMono.variable} antialiased overflow-x-clip`}
       >
