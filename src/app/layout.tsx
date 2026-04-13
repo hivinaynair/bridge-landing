@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     "Driving school software built for India. Aadhaar KYC admissions, WhatsApp follow-ups, Sarathi auto-fill, fleet tracking.",
   metadataBase: new URL("https://bridgedrive.in"),
   alternates: {
-    canonical: "/",
+    canonical: "./",
   },
   openGraph: {
     title: "Bridge — Driving School Software for India",
     description:
       "Driving school software built for India. Aadhaar KYC admissions, WhatsApp follow-ups, Sarathi auto-fill, fleet tracking.",
-    url: "https://bridgedrive.in",
+    url: "./",
     siteName: "Bridge",
     type: "website",
     locale: "en_IN",
